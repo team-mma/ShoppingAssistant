@@ -5,4 +5,4 @@
 * Maria
 * Abhilash
 
-Check: https://shopping-assistant-184607.appspot.com/index.html
+Public URL: https://shopping-assistant-184607.appspot.com/index.html
