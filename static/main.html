@@ -3,21 +3,83 @@
 <html>
 <head>
 	<meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="liststyle.css">
 	<title>Shopping Assistant</title>
 </head>
 
 <body>
+   <!--link rel="stylesheet" type="text/css" href="../styles/liststyle.css"-->
+	 <!-- -->
 	<h1>Larry's Shopping List</h1>
-	<a href="listconfirmation.html">Done! Approve List</a>
-	<ol>
-		<li>Milk</li>
-		<li>Cheese</li>
-		<li>Eggs</li>
-		<li>...</li>
-	</ol>
-	<a href="search.html">Add product</a>
-   </br>
-   </br>
-   <a href="index.html">Logout</a>
+
+
+   <div>
+  	<ul>
+
+		<li>
+			 <a href="listconfirmation.html" class="button green">Done! Approve List</a>
+		</li>
+
+    <li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+      <img src="milk.svg" />
+      <h3>Hollandia Organic 2% Milk</h3>
+      <p>Quantity: 2 &nbsp &nbsp 2 qts &nbsp	&nbsp $10</p>
+    </li>
+
+		<li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+			<img src="icon.svg" />
+			<h3>Product</h3>
+			<p>Quantity: 1 &nbsp &nbsp 1 units &nbsp	&nbsp $5</p>
+		</li>
+
+		<li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+			<img src="icon.svg" />
+			<h3>Product</h3>
+			<p>Quantity: 1 &nbsp &nbsp 1 units &nbsp	&nbsp $5</p>
+		</li>
+
+		<li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+			<img src="icon.svg" />
+			<h3>Product</h3>
+			<p>Quantity: 1 &nbsp &nbsp 1 units &nbsp	&nbsp $5</p>
+		</li>
+
+		<li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+			<img src="icon.svg" />
+			<h3>Product</h3>
+			<p>Quantity: 1 &nbsp &nbsp 1 units &nbsp	&nbsp $5</p>
+		</li>
+
+		<li>
+			<i class="arrow right"></i>
+			<i class="arrow left"></i>
+			<img src="icon.svg" />
+			<h3>Product</h3>
+			<p>Quantity: 1 &nbsp &nbsp 1 units &nbsp	&nbsp $5</p>
+		</li>
+
+		<li>
+			<a href="index.html" class="button">Logout</a>
+			<a href="search.html" class="button green">Add product</a>
+		</li>
+
+  	</ul>
+	</div>
+
+   <script>
+      var a = 5+3; //Won't affect HTML & webpage at all
+      console.log("Testing script"); //Will print in console!
+      //document.body.innerHTML = "HAHHH you can't see the webpage anymore (test)";
+   </script>
 </body>
 </html>
