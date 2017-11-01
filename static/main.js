@@ -11,5 +11,9 @@ function removeItem(){
 //Removes the item for now
 $("ul").on("click", "i", function(e) {
     e.preventDefault();
-    $(this).parent().remove();
+    if(this.className==="arrow left") {
+        $(this).parent().remove();
+    } else if(this.className==="arrow right") {
+        alert("Quantity update noted!");
+    }
 });
