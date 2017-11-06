@@ -98,8 +98,8 @@
 
 <script id="list-item-template" type="text/x-handlebars-template">
   <li id={{id}}>
-      <i onclick="addItem()" class="arrow right"></i>
-      <i onclick="removeItem()" class="arrow left"></i>
+      <i onclick="addItem({{id}})" class="arrow right"></i>
+      <i onclick="removeItem({{id}})" class="arrow left"></i>
       <img src="{{productPic}}"/>
       <h3>{{productTitle}}</h3>
       <p>Quantity: {{productQuantity}}&nbsp &nbsp
