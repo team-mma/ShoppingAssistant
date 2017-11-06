@@ -12,8 +12,8 @@
 <!-- -->
 <h1>Larry's Shopping List</h1>
 
-
-<div>
+<!-- List items generated undynamically (no longer functional)-->
+<!--<div>
     <ul class="productlist">
 
         <li>
@@ -68,14 +68,48 @@
             <p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
         </li>
 
+        <div id="templatedLists">
+          <!--templated list items will be put into this div-->
+        <!--</div>
+
         <li>
             <a href="index.html" class="button">Logout</a>
             <a href="search.html" class="button green">Add product</a>
         </li>
     </ul>
+</div> -->
+
+<div>
+    <ul class="productlist">
+        <li>
+            <a href="listconfirmation.html" class="button green">Done! Approve List</a>
+        </li>
+
+        <div id="templatedLists" class="nomargin">
+          <!--templated list items will be put into this div-->
+        </div>
+
+        <li>
+        <a href="index.html" class="button">Logout</a>
+        <a href="search.html" class="button green">Add product</a>
+        </li>
+    </ul>
 </div>
 
+<script id="list-item-template" type="text/x-handlebars-template">
+  <li id={{id}}>
+      <i onclick="addItem()" class="arrow right"></i>
+      <i onclick="removeItem()" class="arrow left"></i>
+      <img src="{{productPic}}"/>
+      <h3>{{productTitle}}</h3>
+      <p>Quantity: {{productQuantity}}&nbsp &nbsp
+        {{productAmount}} {{productUnits}} each&nbsp &nbsp
+        {{productCost}} each</p>
+  </li>
+</script>
+<script type='text/javascript' src='handlebars-v4.0.11.js'></script>
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="storage.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
