@@ -13,10 +13,13 @@
     <br/>
     <a href="timeuntilpickup.html" class="button">Send</a><br/>
 </div>
+</br>
+</br>
 <div>
-    <h2>Your Approved Shopping List</h2>
+
     <ul>
-        <li>Hershey's Milk Chocolate - (1)</li>
+      <h2>Your Approved Shopping List</h2>
+        <!--<li>Hershey's Milk Chocolate - (1)</li>
         <li>Danone Cheese - (2)</li>
         <li>Eggs - (6)</li>
         <li>Product x - (n)</li>
@@ -24,12 +27,26 @@
         <li>Product x - (n)</li>
         <li>Product x - (n)</li>
         <li>Product x - (n)</li>
-        <li>Product x - (n)</li>
+        <li>Product x - (n)</li>-->
+        <div id="templatedConfs">
+          <!--templated list items will be put into this div-->
+        </div>
         <li>
             <a href="index.html" class="button">Logout</a>
             <a href="main.html" class="button">Edit List</a>
         </li>
     </ul>
 </div>
+
+<script id="conf-item-template" type="text/x-handlebars-template">
+  <li id={{id}}>
+      <p>{{productTitle}}: {{productQuantity}} </p>
+      <p class="rightpar">{{productCost}}</p>
+  </li>
+</script>
+<script type='text/javascript' src='handlebars-v4.0.11.js'></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="storage.js"></script>
+<script src="listconfirmation.js"></script>
 </body>
 </html>
