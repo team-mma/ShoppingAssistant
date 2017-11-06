@@ -9,10 +9,10 @@ var parentDiv = $("#templatedLists");
 console.log(html);
 parentDiv.append(html);**/
 
-//iterate through the complexData list and append:
-for (var i = 0; i < shoppingHistoryProducts.length; i++) {
+var savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
+for (var i = 0; i < savedShoppingProductsList.length; i++) {
   //var curData = shoppingHistoryProducts[i];
-  currentProducts.push(shoppingHistoryProducts[i]);
+  currentProducts.push(savedShoppingProductsList[i]);
   currentProducts[i].id = "elem"+i.toString();
   var curData = currentProducts[i];
   var curHtml = template(curData);
