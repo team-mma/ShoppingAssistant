@@ -8,7 +8,7 @@ var savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistory
 for (var i = 0; i < savedShoppingProductsList.length; i++) {
   //var curData = shoppingHistoryProducts[i];
   currentProducts.push(savedShoppingProductsList[i]);
-  currentProducts[i].id = i.toString();
+//  currentProducts[i].id = i.toString();
   var curData = currentProducts[i];
   var curHtml = template(curData);
   parentDiv.append(curHtml);
@@ -25,14 +25,24 @@ function addItem(i){
     // TODO: The localStorage is updated. The page should refresh to show the updated changes
 }
 
-function removeItem(i){
-    console.log('remove item:',i);
+function removeItem(id){
+    console.log('remove id:',id);
     var savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
-    var prodTitle = savedShoppingProductsList[i].productTitle;
-    alert("Deleting "+prodTitle+" ...");
-    delete savedShoppingProductsList[i];
-    savedShoppingProductsList.splice(i,1);
+    deleteItemFromStorage(id, savedShoppingProductsList);
     localStorage.setItem('shoppingHistoryProducts',JSON.stringify(savedShoppingProductsList));
+}
+
+function deleteItemFromStorage(id, savedShoppingProductsList) {
+    for(var i = 0; i < savedShoppingProductsList.length; i++) {
+        var prod = savedShoppingProductsList[i];
+        if(prod.id == id) {
+            var prodTitle = savedShoppingProductsList[i].productTitle;
+            alert("Deleting "+prodTitle+" ...");
+            delete savedShoppingProductsList[i];
+            savedShoppingProductsList.splice(i,1);
+            return;
+        }
+    }
 }
 
 //Removes or adds the item for now
