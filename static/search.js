@@ -13,14 +13,26 @@ function startDictation() {
         recognition.start();
 
         recognition.onresult = function (e) {
-            document.getElementById('transcript').value = e.results[0][0].transcript;
+            word = e.results[0][0].transcript;
+            document.getElementById('transcript').value = word;
             recognition.stop();
-            document.getElementById('labnol').submit();
+            searchWord(word);
+//            document.getElementById('labnol').submit();
         };
 
         recognition.onerror = function (e) {
             recognition.stop();
         }
 
+    }
+}
+
+function searchWord(word) {
+    console.log('word searched: ',word);
+    for(var i = 0; i < shoppingHistoryProducts.length; i++) {
+        var product = shoppingHistoryProducts[i];
+        if(product.productTitle.toLowerCase().includes(word.toLowerCase())) {
+            console.log(product.productTitle);
+        }
     }
 }

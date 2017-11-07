@@ -9,6 +9,16 @@ var shoppingHistoryProducts = [
   'productAmount': '10','productUnits': 'oz', 'productCost': '$3.60', 'id': 3},
   {'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': 'milk.svg', 'productQuantity': 1,
   'productAmount': '14.5','productUnits': 'oz', 'productCost': '$6.99', 'id': 4},
+    {'productTitle': 'Chocolate 1', 'productPic': 'milk.svg', 'productQuantity': 1,
+  'productAmount': '10','productUnits': 'qts', 'productCost': '$6.99', 'id': 5},
+    {'productTitle': 'Chocolate 2', 'productPic': 'milk.svg', 'productQuantity': 1,
+  'productAmount': '10','productUnits': 'qts', 'productCost': '$6.99', 'id': 6},
+    {'productTitle': 'Chocolate 3', 'productPic': 'milk.svg', 'productQuantity': 1,
+  'productAmount': '10','productUnits': 'qts', 'productCost': '$6.99', 'id': 7},
+    {'productTitle': 'Chocolate 4', 'productPic': 'milk.svg', 'productQuantity': 1,
+  'productAmount': '10','productUnits': 'qts', 'productCost': '$6.99', 'id': 8},
+    {'productTitle': 'Chocolate 5', 'productPic': 'milk.svg', 'productQuantity': 1,
+  'productAmount': '10','productUnits': 'qts', 'productCost': '$6.99', 'id': 9},
 ];
 
 var currentProducts = [];
