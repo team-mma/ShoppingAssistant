@@ -1,14 +1,15 @@
 $('#timer').click(changeText);
-function changeText(event) {
- $(this).text("Changed text");
-};
 
-remainingTime = 15*60;
-$(document).ready(function(){
-    setInterval(function(){
+function changeText() {
+    $(this).text("Changed text");
+}
+
+var remainingTime = 14 * 60;
+$(document).ready(function () {
+    setInterval(function () {
         remainingTime -= 1;
-        mins = parseInt(remainingTime/60);
-        sec = remainingTime % 60;
-        document.getElementById('timer').innerHTML = 'Your cart will be ready in '+mins+'m '+sec+'s';
-    },1000);
+        var mins = parseInt(remainingTime / 60);
+        var sec = remainingTime % 60;
+        document.getElementById('timer').innerHTML = 'Your cart will be ready in ' + mins + 'm ' + sec + 's';
+    }, 1000);
 });

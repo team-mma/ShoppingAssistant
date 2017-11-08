@@ -24,7 +24,7 @@ function addItem(id){
 function increaseItemCount(id, savedShoppingProductsList) {
     for(var i = 0; i < savedShoppingProductsList.length; i++) {
         var prod = savedShoppingProductsList[i];
-        if(prod.id == id) {
+        if(prod.id === id) {
             var prodTitle = savedShoppingProductsList[i].productTitle;
             alert("Quantity updated: "+prodTitle);
             savedShoppingProductsList[i].productQuantity = 
@@ -44,7 +44,7 @@ function removeItem(id){
 function deleteItemFromStorage(id, savedShoppingProductsList) {
     for(var i = 0; i < savedShoppingProductsList.length; i++) {
         var prod = savedShoppingProductsList[i];
-        if(prod.id == id) {
+        if(prod.id === id) {
             var prodTitle = savedShoppingProductsList[i].productTitle;
             alert("Deleting "+prodTitle+" ...");
             delete savedShoppingProductsList[i];
