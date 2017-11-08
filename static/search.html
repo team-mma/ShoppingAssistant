@@ -3,36 +3,47 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Search for products here</title>
-    <link rel="stylesheet" type="text/css" href="searchstyle.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="liststyle.css">
+	<title>Search for products here</title>
+	<link rel="stylesheet" type="text/css" href="searchstyle.css">
 </head>
 
 <body>
-    <h1>Search for products!</h1>
+<h1>Search for products!</h1>
 
-    <h4>Press the MIC button and start speaking...</h4>
-    <h4>Say "CHOCOLATE"...</h4>
-    <a href="searchresults.html">"Voice search" for 'chocolate'!</a>
-    <ol>
-        <li>Voice search functionality</li>
-        <li>Search brings up products from shopping history</li>
-    </ol>
+<h4>Press the MIC button and start speaking...</h4>
+<h4>Say "CHOCOLATE"...</h4>
+<a href="searchresults.html">"Voice search" for 'chocolate'!</a>
+<ol>
+	<li>Voice search functionality</li>
+	<li>Search brings up products from shopping history</li>
+</ol>
 
 
-    <!-- Search Form -->
-    <!-- Supports search by both voice and search -->
-    <form id="labnol" method="get" action="https://www.google.com/search">
-        <div class="speech">
-            <input type="text" name="q" id="transcript" placeholder="Speak" />
-            <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
-        </div>
-    </form>
-    <br>
-    <a href="main.html">Back to list</a>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="storage.js"></script>
-    <script src="search.js"></script>
+<!-- Search Form -->
+<!-- Supports search by both voice and search -->
+<form id="labnol" method="get" action="https://www.google.com/search">
+	<div class="speech">
+		<input type="text" name="q" id="transcript" placeholder="Speak" />
+		<img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+	</div>
+</form>
+<br>
+<a href="main.html">Back to list</a>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+crossorigin="anonymous"></script>
+<script src="storage.js"></script>
+<script src="search.js"></script>
 </body>
 
 </html>

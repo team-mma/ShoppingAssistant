@@ -1,28 +1,35 @@
 * {margin: 0; padding: 0;}
 
+@media (max-width: 480px) {
+  .column {
+    float: none;
+    width: 100%
+  }
+}
+
 h1 {
-  margin: 0px 0px 0px 0px;
+  /*margin: 0px 0px 0px 0px;*/
   font: bold 30px/1.5 Helvetica, Verdana, sans-serif;
-  padding: 20px;
-  width: 360px;
+  /*padding: 20px;*/
+  /*width: 360px;*/
   background-color: #eee
 }
 
 h2 {
-  margin: 0px 0px 0px 0px;
+  /*margin: 0px 0px 0px 0px;*/
   font: bold 22px/1.5 Helvetica, Verdana, sans-serif;
-  padding: 10px;
-  width: 380px;
+  /*padding: 10px;*/
+  /*width: 380px;*/
   background-color: #eee
 }
 
-div {
-  margin: 0px 0px 0px 0px;
-}
+/*div {*/
+  /*margin: 0px 0px 0px 0px;*/
+/*}*/
 
-.nomargin {
-  margin: 0px 0px 0px 0px;
-}
+/*.nomargin {*/
+  /*margin: 0px 0px 0px 0px;*/
+/*}*/
 
 i {
     border: solid black;
@@ -49,7 +56,7 @@ ul {
   list-style-type: none;
   background-color: #eee;
   border-style: none none groove none;
-  width: 400px;
+  /*width: 400px;*/
 }
 
 h3 {
@@ -57,8 +64,8 @@ h3 {
 }
 
 li i{
-  margin: 18px 0px 0px 0px;
-  width: 0px;
+  /*margin: 18px 0px 0px 0px;*/
+  /*width: 0px;*/
 }
 
 li img {
@@ -98,10 +105,9 @@ li {
   background-color: #EEEEEE;
   color: #333333;
   padding: 5px 10px 5px 10px;
-  border-top: 2px solid #CCCCCC;
-  border-right: 2px solid #333333;
-  border-bottom: 2px solid #333333;
-  border-left: 2px solid #CCCCCC;
+    border: 2px solid #CCCCCC;
+    border-right-color: #333333;
+    border-bottom-color: #333333;
 }
 
 .green {
