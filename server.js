@@ -1,18 +1,11 @@
-/**
- * Introduction to Human-Computer Interaction
- * Lab 1
- * --------------
- * Created by: Michael Bernstein
- * Last updated: December 2013
- */
-var PORT = 3000;
+const PORT = 3000;
 
 // Express is a web framework for node.js
 // that makes nontrivial applications easier to build
-var express = require('express');
+const express = require('express');
 
 // Create the server instance
-var app = express();
+const app = express();
 
 // Print logs to the console and compress pages we send
 app.use(express.logger());
@@ -25,7 +18,7 @@ app.use(express.compress());
 app.use(express.static(__dirname + '/static'));
 
 // Start the server
-var port = process.env.PORT || PORT; // 80 for web, 3000 for development
-app.listen(port, function() {
-	console.log("Node.js server running on port %s", port);
+let port = process.env.PORT || PORT; // 80 for web, 3000 for development
+app.listen(port, function () {
+    console.log("Node.js server running on port %s", port);
 });
