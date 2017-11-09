@@ -1,14 +1,14 @@
-var source = $("#conf-item-template").html();
-var template = Handlebars.compile(source);
-var parentDiv = $("#templatedConfs");
+let source = $("#conf-item-template").html();
+let template = Handlebars.compile(source);
+let parentDiv = $("#templatedConfs");
 
-$(document).ready(function(){
-    var savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
+$(document).ready(function () {
+    let savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
 
-    for (var i = 0; i < savedShoppingProductsList.length; i++) {
-      var curData = savedShoppingProductsList[i];
-      var curHtml = template(curData);
-      parentDiv.append(curHtml);
+    for (let i = 0; i < savedShoppingProductsList.length; i++) {
+        let curData = savedShoppingProductsList[i];
+        let curHtml = template(curData);
+        parentDiv.append(curHtml);
     }
 });
 

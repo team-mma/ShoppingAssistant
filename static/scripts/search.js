@@ -4,7 +4,7 @@ function startDictation() {
 
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
-        var recognition = new webkitSpeechRecognition();
+        let recognition = new webkitSpeechRecognition();
 
         recognition.continuous = false;
         recognition.interimResults = false;
@@ -17,7 +17,6 @@ function startDictation() {
             document.getElementById('transcript').value = word;
             recognition.stop();
             searchWord(word);
-//            document.getElementById('labnol').submit();
         };
 
         recognition.onerror = function (e) {
@@ -29,8 +28,8 @@ function startDictation() {
 
 function searchWord(word) {
     console.log('word searched: ',word);
-    for(var i = 0; i < shoppingHistoryProducts.length; i++) {
-        var product = shoppingHistoryProducts[i];
+    for(let i = 0; i < shoppingHistoryProducts.length; i++) {
+        let product = shoppingHistoryProducts[i];
         if(product.productTitle.toLowerCase().includes(word.toLowerCase())) {
             console.log(product.productTitle);
         }
