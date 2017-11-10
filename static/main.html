@@ -17,83 +17,17 @@
 			<h1>Larry's Shopping List</h1>
 		</div>
 	</div>
-	<!-- List items generated undynamically (no longer functional)-->
-	<!--<div>
-		<ul class="productlist">
-
-			<li>
-				<a href="listconfirmation.html" class="button green">Done! Approve List</a>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="milk.svg"/>
-				<h3>Hollandia Organic 2% Milk</h3>
-				<p>Quantity: x &nbsp &nbsp 2 qts &nbsp &nbsp $10</p>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="icon.svg"/>
-				<h3>Product</h3>
-				<p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="icon.svg"/>
-				<h3>Product</h3>
-				<p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="icon.svg"/>
-				<h3>Product</h3>
-				<p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="icon.svg"/>
-				<h3>Product</h3>
-				<p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
-			</li>
-
-			<li>
-				<i onclick="addItem()" class="arrow right"></i>
-				<i onclick="removeItem()" class="arrow left"></i>
-				<img src="icon.svg"/>
-				<h3>Product</h3>
-				<p>Quantity: n &nbsp &nbsp 1 units &nbsp &nbsp $5</p>
-			</li>
-
-			<div id="templatedLists">
-			  <!--templated list items will be put into this div-->
-	<!--</div>
-
-	<li>
-		<a href="index.html" class="button">Logout</a>
-		<a href="search.html" class="button green">Add product</a>
-	</li>
-</ul>
-</div> -->
 	<div class="row">
 		<div class="col-sm-12 col-md-6">
 			<ul class="productlist">
 				<li>
 					<a href="listconfirmation.html" class="button green">Done! Approve List</a>
 				</li>
-				
+
 				<div id="templatedLists" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
-				
+
 				<li>
 					<a href="index.html" class="button">Logout</a>
 					<a href="search.html" class="button green">Add product</a>
@@ -105,26 +39,25 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script id="list-item-template" type="text/x-handlebars-template">
-<li id={{id}}>
-<i onclick="addItem({{id}})" class="arrow right"></i>
-<i onclick="removeItem({{id}})" class="arrow left"></i>
-<img src="{{productPic}}" />
-<h3>{{productTitle}}</h3>
-<p>Quantity: {{productQuantity}}&nbsp &nbsp
-{{productAmount}} {{productUnits}} each&nbsp &nbsp
-{{productCost}} each</p>
-</li>
+	<li id={{id}}>
+		<i onclick="increaseItemCount({{id}})" class="arrow right"></i>
+		<i onclick="removeItem({{id}})" class="arrow left"></i>
+		<img src="{{productPic}}" />
+		<h3>{{productTitle}}</h3>
+		<p>Quantity: {{productQuantity}}&nbsp &nbsp
+		   {{productAmount}} {{productUnits}} each&nbsp &nbsp
+		   {{productCost}} each</p>
+	</li>
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-crossorigin="anonymous"></script>
-<script src="scripts/storage.js"></script>
+        crossorigin="anonymous"></script>
 <script src="scripts/main.js"></script>
 </body>
 </html>
