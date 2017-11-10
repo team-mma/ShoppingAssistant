@@ -3,12 +3,11 @@ let template = Handlebars.compile(source);
 let parentDiv = $("#templatedConfs");
 
 $(document).ready(function () {
-    let savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
+    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
 
-    for (let i = 0; i < savedShoppingProductsList.length; i++) {
-        let curData = savedShoppingProductsList[i];
+    for (let i = 0; i < tempList.length; i++) {
+        let curData = tempList[i];
         let curHtml = template(curData);
         parentDiv.append(curHtml);
     }
 });
-

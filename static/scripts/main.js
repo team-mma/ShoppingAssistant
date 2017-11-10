@@ -7,7 +7,6 @@ let parentDiv = $("#templatedLists");
 //shows current products as a list on the homepage
 let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
 for (let i = 0; i < currentProductsList.length; i++) {
-    //currentProducts.push(savedShoppingProductsList[i]);
     let curData = currentProductsList[i];
     let curHtml = template(curData);
     parentDiv.append(curHtml);
@@ -19,10 +18,9 @@ function increaseItemCount(id) {
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
-    // TODO: The localStorage is updated. Show updated quantity
     let curData = tempList[id];
     let curHtml = template(curData);
-    parentDiv.replaceChild(id+1,curData)
+    document.getElementById(id).innerHTML = curHtml;
 }
 
 //Helper method to increase quantity
@@ -31,7 +29,6 @@ function increaseQuantity(id, tempList) {
         let prod = tempList[i];
         if (prod.id === id) {
             let prodTitle = tempList[i].productTitle;
-            alert("Quantity updated: " + prodTitle);
             tempList[i].productQuantity =
                 tempList[i].productQuantity + 1;
             return;
