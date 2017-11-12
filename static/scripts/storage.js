@@ -19,31 +19,11 @@ let shoppingHistoryProducts = [
         'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '14.5', 'productUnits': 'oz', 'productCost': '$6.99', 'id': 4
     },
-    {
-        'productTitle': 'Chocolate 1', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 5
-    },
-    {
-        'productTitle': 'Chocolate 2', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 6
-    },
-    {
-        'productTitle': 'Chocolate 3', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 7
-    },
-    {
-        'productTitle': 'Chocolate 4', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 8
-    },
-    {
-        'productTitle': 'Chocolate 5', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 9
-    },
 ];
 
 let storeProducts = [
     {
-        'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 2,
+        'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '2', 'productUnits': 'qts', 'productCost': '$5.00', 'id': 0
     },
     {
@@ -55,7 +35,7 @@ let storeProducts = [
         'productAmount': '16', 'productUnits': 'oz', 'productCost': '$7.50', 'id': 2
     },
     {
-        'productTitle': 'Hollandia Butter', 'productPic': '../images/milk.svg', 'productQuantity': 3,
+        'productTitle': 'Hollandia Butter', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'oz', 'productCost': '$3.60', 'id': 3
     },
     {
@@ -63,23 +43,31 @@ let storeProducts = [
         'productAmount': '14.5', 'productUnits': 'oz', 'productCost': '$6.99', 'id': 4
     },
     {
-        'productTitle': 'Chocolate 1', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Hersheys Milk Chocolate', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 5
     },
     {
-        'productTitle': 'Chocolate 2', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Hersheys Dark Chocolate', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 6
     },
     {
-        'productTitle': 'Chocolate 3', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate 1', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 7
     },
     {
-        'productTitle': 'Chocolate 4', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate 2', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 8
     },
     {
-        'productTitle': 'Chocolate 5', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate 3', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 9
     },
+    {
+        'productTitle': 'Chocolate 4', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 10
+    },
+    {
+        'productTitle': 'Chocolate 5', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 11
+    }
 ];
