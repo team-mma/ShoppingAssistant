@@ -4,12 +4,20 @@ let template = Handlebars.compile(source);
 
 let parentDiv = $("#templatedLists");
 
+$(document).ready(function () {
+    displayShoppingList();
+});
+
 //shows current products as a list on the homepage
-let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
-for (let i = 0; i < currentProductsList.length; i++) {
-    let curData = currentProductsList[i];
-    let curHtml = template(curData);
-    parentDiv.append(curHtml);
+function displayShoppingList(){
+    console.log('displayShoppingList');
+    parentDiv.html("");
+    let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
+    for (let i = 0; i < currentProductsList.length; i++) {
+        let curData = currentProductsList[i];
+        let curHtml = template(curData);
+        parentDiv.append(curHtml);
+    }   
 }
 
 //Increases item count in current products
@@ -18,9 +26,7 @@ function increaseItemCount(id) {
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
-    let curData = tempList[id];
-    let curHtml = template(curData);
-    document.getElementById(id).innerHTML = curHtml;
+    displayShoppingList();
 }
 
 //Helper method to increase quantity
@@ -36,41 +42,25 @@ function increaseQuantity(id, tempList) {
     }
 }
 
-//Adds a new item to the current products from search
-function addItem(id) {
-  return;
-}
-
 //Removes item from current products
 function removeItem(id) {
     console.log('remove id:', id);
-    let savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
-    deleteItemFromStorage(id, savedShoppingProductsList);
-    localStorage.setItem('shoppingHistoryProducts', JSON.stringify(savedShoppingProductsList));
+    let tmpList = JSON.parse(localStorage.getItem('currentProducts'));
+    deleteItemFromStorage(id, tmpList);
+    localStorage.setItem('currentProducts', JSON.stringify(tmpList));
+    displayShoppingList();
 }
 
-function deleteItemFromStorage(id, savedShoppingProductsList) {
-    for (let i = 0; i < savedShoppingProductsList.length; i++) {
-        let prod = savedShoppingProductsList[i];
+//Helper method to delete an item
+function deleteItemFromStorage(id, tmpList) {
+    for (let i = 0; i < tmpList.length; i++) {
+        let prod = tmpList[i];
         if (prod.id === id) {
-            let prodTitle = savedShoppingProductsList[i].productTitle;
+            let prodTitle = tmpList[i].productTitle;
             alert("Deleting " + prodTitle + " ...");
-            delete savedShoppingProductsList[i];
-            savedShoppingProductsList.splice(i, 1);
+            delete tmpList[i];
+            tmpList.splice(i, 1);
             return;
         }
     }
 }
-
-//Removes or adds the item for now
-$("ul").on("click", "i", function (e) {
-    console.log('click');
-    e.preventDefault();
-    if (this.className === "arrow left") {
-        //TODO: reduce quantity, not remove item
-        $(this).parent().remove();
-    } else if (this.className === "arrow right") {
-//        alert("Quantity update noted!");
-        //TODO: update quantity
-    }
-});
