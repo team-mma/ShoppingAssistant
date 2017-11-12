@@ -1,3 +1,6 @@
+// This is the list of products from the user's shopping history. 
+// This is static for now(does not change with user adding or deleting the products)
+// Can be personalized for each user
 let shoppingHistoryProducts = [
     {
         'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 2,
@@ -21,6 +24,7 @@ let shoppingHistoryProducts = [
     },
 ];
 
+// This is the complete database of all the products in the store
 let storeProducts = [
     {
         'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 1,
@@ -51,23 +55,23 @@ let storeProducts = [
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 6
     },
     {
-        'productTitle': 'Chocolate 1', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate A', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 7
     },
     {
-        'productTitle': 'Chocolate 2', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate B', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 8
     },
     {
-        'productTitle': 'Chocolate 3', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate C', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 9
     },
     {
-        'productTitle': 'Chocolate 4', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate D', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 10
     },
     {
-        'productTitle': 'Chocolate 5', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate E', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'productAmount': '10', 'productUnits': 'qts', 'productCost': '$6.99', 'id': 11
     }
 ];

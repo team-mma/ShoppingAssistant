@@ -7,7 +7,6 @@ let parentDiv = $("#templatedLists");
 <!-- HTML5 Speech Recognition API -->
 function startDictation() {
     document.getElementById('transcript').value = "Listening...";
-
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
         let recognition = new webkitSpeechRecognition();
@@ -32,19 +31,26 @@ function startDictation() {
     }
 }
 
+// Search the given word in the store database and display the results
 function searchWord(word) {
     console.log('word searched: ',word);
+    parentDiv.html("");
+    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     for(let i = 0; i < storeProducts.length; i++) {
         let product = storeProducts[i];
         if(product.productTitle.toLowerCase().includes(word.toLowerCase())) {
             console.log(product.productTitle);
-            let curHtml = template(product);
-            parentDiv.append(curHtml);
+            // Display the product only if it is not already added in the currentProductList
+            if(!contains(i,tempList)) {
+                let curHtml = template(product);
+                parentDiv.append(curHtml);
+            }
+            
         }
     }
 }
 
-//Increases item count in current products
+//Add an item in current products, if it is not already added
 function addItem(id) {
     console.log('add id:', id);
     let prod = storeProducts[id];
@@ -64,6 +70,7 @@ function addItem(id) {
 //    document.getElementById(id).innerHTML = curHtml;
 }
 
+// Helper method to check if a prod is already present in the list
 function contains(id, tempList) {
     for (let i = 0; i < tempList.length; i++) {
         let prod = tempList[i];
@@ -71,17 +78,4 @@ function contains(id, tempList) {
             return true;
     }
     return false;
-}
-
-//Helper method to increase quantity
-function increaseQuantity(id, tempList) {
-    for (let i = 0; i < tempList.length; i++) {
-        let prod = tempList[i];
-        if (prod.id === id) {
-            let prodTitle = tempList[i].productTitle;
-            tempList[i].productQuantity =
-                tempList[i].productQuantity + 1;
-            return;
-        }
-    }
 }
