@@ -43,3 +43,45 @@ function searchWord(word) {
         }
     }
 }
+
+//Increases item count in current products
+function addItem(id) {
+    console.log('add id:', id);
+    let prod = storeProducts[id];
+    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
+    if(contains(id,tempList)) 
+        alert(prod.productTitle+" is already added");
+    else {
+        tempList.push(prod);
+        alert(prod.productTitle+" added");
+    }
+    
+    localStorage.setItem('currentProducts', JSON.stringify(tempList));
+//    increaseQuantity(id, tempList);
+//    localStorage.setItem('currentProducts', JSON.stringify(tempList));
+//    let curData = tempList[id];
+//    let curHtml = template(curData);
+//    document.getElementById(id).innerHTML = curHtml;
+}
+
+function contains(id, tempList) {
+    for (let i = 0; i < tempList.length; i++) {
+        let prod = tempList[i];
+        if(prod.id == id)
+            return true;
+    }
+    return false;
+}
+
+//Helper method to increase quantity
+function increaseQuantity(id, tempList) {
+    for (let i = 0; i < tempList.length; i++) {
+        let prod = tempList[i];
+        if (prod.id === id) {
+            let prodTitle = tempList[i].productTitle;
+            tempList[i].productQuantity =
+                tempList[i].productQuantity + 1;
+            return;
+        }
+    }
+}

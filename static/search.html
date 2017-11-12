@@ -19,12 +19,7 @@
 
                 <h4>Press the MIC button and start speaking...</h4>
                 <h4>Say "CHOCOLATE"...</h4>
-                <a href="searchresults.html">"Voice search" for 'chocolate'!</a>
-                <ol>
-                    <li>Voice search functionality</li>
-                    <li>Search brings up products from shopping history</li>
-                </ol>
-
+<!--                <a href="searchresults.html">"Voice search" for 'chocolate'!</a>-->
 
                 <!-- Search Form -->
                 <!-- Supports search by both voice and text -->
@@ -52,7 +47,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
     <script id="list-item-template" type="text/x-handlebars-template">
         <li id={{id}}>
-<!--            <i onclick="increaseItemCount({{id}})" class="arrow right"></i>-->
+            <i onclick="addItem({{id}})" class="arrow right"></i>
 <!--            <i onclick="removeItem({{id}})" class="arrow left"></i>-->
             <img src="{{productPic}}" />
             <h3>{{productTitle}}</h3>
