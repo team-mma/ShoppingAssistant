@@ -4,12 +4,20 @@ let template = Handlebars.compile(source);
 
 let parentDiv = $("#templatedLists");
 
+$(document).ready(function () {
+    displayShoppingList();
+});
+
 //shows current products as a list on the homepage
-let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
-for (let i = 0; i < currentProductsList.length; i++) {
-    let curData = currentProductsList[i];
-    let curHtml = template(curData);
-    parentDiv.append(curHtml);
+function displayShoppingList(){
+    console.log('displayShoppingList');
+    parentDiv.html("");
+    let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
+    for (let i = 0; i < currentProductsList.length; i++) {
+        let curData = currentProductsList[i];
+        let curHtml = template(curData);
+        parentDiv.append(curHtml);
+    }
 }
 
 //Increases item count in current products
@@ -18,9 +26,7 @@ function increaseItemCount(id) {
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
-    let curData = tempList[id];
-    let curHtml = template(curData);
-    document.getElementById(id).innerHTML = curHtml;
+    displayShoppingList();
 }
 
 //Helper method to increase quantity
@@ -35,9 +41,33 @@ function increaseQuantity(id, tempList) {
     }
 }
 
+function removeItem(id) {
+    console.log('remove id:', id);
+    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
+    decreaseQuantityOrDelete(id, tempList);
+    localStorage.setItem('currentProducts', JSON.stringify(tempList));
+    displayShoppingList();
+}
+
+function decreaseQuantityOrDelete(id, tempList) {
+    for (let i = 0; i < tempList.length; i++) {
+        let prod = tempList[i];
+        if (prod.id === id) {
+            if(prod.productQuantity > 1){
+              console.log("quantity decreased");
+              tempList[i].productQuantity =
+                tempList[i].productQuantity - 1;
+            }
+            else {
+              console.log("product deleted");
+              tempList.splice(i,1);
+            }
+        }
+    }
+}
 //Method to decrease quantity or remove item
-function removeItem(id){
-    console.log('add id:', id);
+/*function removeItem(id){
+    console.log('remove id:', id);
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     for (let i = 0; i < tempList.length; i++) { //finding item
         let prod = tempList[i];
@@ -47,15 +77,16 @@ function removeItem(id){
                     tempList[i].productQuantity - 1;
             }
             else {
-                savedShoppingProductsList.splice(i, 1);
+                templist.splice(i, 1);
             }
-
+          }
         }
-  }
+        localStorage.setItem('currentProducts', JSON.stringify(tempList));
+        displayShoppingList();
+      }*/
 //if quantity is > 1, product quantity should be decreased
 //if quantity is 1, product should be removed from the list completely
 
-}
 
 //Helper method to decrease quantity
 function decreaseQuantity(id, tempList) {
@@ -74,21 +105,29 @@ function decreaseQuantity(id, tempList) {
 //Removes item from current products
 function removeItem(id) {
     console.log('remove id:', id);
-    let savedShoppingProductsList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
-    deleteItemFromStorage(id, savedShoppingProductsList);
-    localStorage.setItem('shoppingHistoryProducts', JSON.stringify(savedShoppingProductsList));
+    let tmpList = JSON.parse(localStorage.getItem('currentProducts'));
+    deleteItemFromStorage(id, tmpList);
+    localStorage.setItem('currentProducts', JSON.stringify(tmpList));
+    displayShoppingList();
 }
 */
+
+//Helper method to delete an item
+function deleteItemFromStorage(id, tmpList) {
+    for (let i = 0; i < tmpList.length; i++) {
+        let prod = tmpList[i];
+      }
+    }
 
 /**
 function deleteItemFromStorage(id, savedShoppingProductsList) {
     for (let i = 0; i < savedShoppingProductsList.length; i++) {
         let prod = savedShoppingProductsList[i];
         if (prod.id === id) {
-            let prodTitle = savedShoppingProductsList[i].productTitle;
+            let prodTitle = tmpList[i].productTitle;
             alert("Deleting " + prodTitle + " ...");
-            delete savedShoppingProductsList[i];
-            savedShoppingProductsList.splice(i, 1);
+            delete tmpList[i];
+            tmpList.splice(i, 1);
             return;
         }
     }
