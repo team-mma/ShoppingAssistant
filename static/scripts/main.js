@@ -2,6 +2,11 @@
 let source = $("#list-item-template").html();
 let template = Handlebars.compile(source);
 
+let undosource = $("#undo-item-template").html();
+let undotemplate = Handlebars.compile(undosource);
+let undoBool = 0;
+var stopFunction;
+
 let parentDiv = $("#templatedLists");
 
 $(document).ready(function () {
@@ -26,7 +31,7 @@ function increaseItemCount(id) {
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
-    displayShoppingList();
+      displayShoppingList();
 }
 
 //Helper method to increase quantity
@@ -45,8 +50,21 @@ function removeItem(id) {
     console.log('remove id:', id);
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     decreaseQuantityOrDelete(id, tempList);
-    localStorage.setItem('currentProducts', JSON.stringify(tempList));
-    displayShoppingList();
+    if (undoBool == 1){
+      stopFunction = setTimeout(function() {
+          localStorage.setItem('currentProducts', JSON.stringify(tempList));
+        undoBool = 0;
+        displayShoppingList();
+      }, 2500);
+      return;
+    }
+      localStorage.setItem('currentProducts', JSON.stringify(tempList));
+      displayShoppingList();
+}
+
+function undo() {
+  clearTimeout(stopFunction);
+  displayShoppingList();
 }
 
 function decreaseQuantityOrDelete(id, tempList) {
@@ -57,35 +75,35 @@ function decreaseQuantityOrDelete(id, tempList) {
               console.log("quantity decreased");
               tempList[i].productQuantity =
                 tempList[i].productQuantity - 1;
+                return;
             }
             else {
+              undoBool=1;
+              showUndo(i);
               console.log("product deleted");
               tempList.splice(i,1);
             }
         }
     }
 }
-//Method to decrease quantity or remove item
-/*function removeItem(id){
-    console.log('remove id:', id);
-    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
-    for (let i = 0; i < tempList.length; i++) { //finding item
-        let prod = tempList[i];
-        if (prod.id === id) {
-            if (prod.quantity > 1) {
-                tempList[i].productQuantity =
-                    tempList[i].productQuantity - 1;
-            }
-            else {
-                templist.splice(i, 1);
-            }
-          }
-        }
-        localStorage.setItem('currentProducts', JSON.stringify(tempList));
-        displayShoppingList();
-      }*/
-//if quantity is > 1, product quantity should be decreased
-//if quantity is 1, product should be removed from the list completely
+
+
+function showUndo(i) {
+  parentDiv.html("");
+  let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
+  for (let j = 0; j < currentProductsList.length; j++) {
+    if (j!=i){
+      let curData = currentProductsList[j];
+      let curHtml = template(curData);
+      parentDiv.append(curHtml);
+      }
+      else{
+        let curData = currentProductsList[j];
+        let curHtml = undotemplate(curData);
+        parentDiv.append(curHtml);
+      }
+  }
+}
 
 
 //Helper method to decrease quantity
@@ -101,35 +119,9 @@ function decreaseQuantity(id, tempList) {
     }
 }
 
-/*
-//Removes item from current products
-function removeItem(id) {
-    console.log('remove id:', id);
-    let tmpList = JSON.parse(localStorage.getItem('currentProducts'));
-    deleteItemFromStorage(id, tmpList);
-    localStorage.setItem('currentProducts', JSON.stringify(tmpList));
-    displayShoppingList();
-}
-*/
-
 //Helper method to delete an item
 function deleteItemFromStorage(id, tmpList) {
     for (let i = 0; i < tmpList.length; i++) {
         let prod = tmpList[i];
       }
     }
-
-/**
-function deleteItemFromStorage(id, savedShoppingProductsList) {
-    for (let i = 0; i < savedShoppingProductsList.length; i++) {
-        let prod = savedShoppingProductsList[i];
-        if (prod.id === id) {
-            let prodTitle = tmpList[i].productTitle;
-            alert("Deleting " + prodTitle + " ...");
-            delete tmpList[i];
-            tmpList.splice(i, 1);
-            return;
-        }
-    }
-}
-**/

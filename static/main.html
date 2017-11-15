@@ -137,7 +137,7 @@
                 increaseItemCount(id);
             }
         }
-	
+
 	</script>
 </head>
 
@@ -172,6 +172,13 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
+<script id="undo-item-template" type="text/x-handlebars-template">
+		<li id={{id}}>
+			<!--<i onclick="increaseItemCount({{id}})" class="rectangle"></i>-->
+			<!--<i onclick="removeItem({{id}})" class="rectangle"></i>-->
+			<i onclick="undo()" class="button">Undo Delete</i>
+		</li>
+</script>
 <script id="list-item-template" type="text/x-handlebars-template">
 	<div id="swipeRight" ontouchstart=touchStart(event,'swipeRight'); ontouchend="touchEnd(event, {{id}});" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
 		<li id={{id}}>
@@ -185,6 +192,7 @@
 		</li>
 	</div>
 </script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
