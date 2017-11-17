@@ -1,6 +1,6 @@
 //go to login page if the user is not defined
 $(document).ready(function () {
-    if (localStorage.getItem('user') == 'null') {
+    if (localStorage.getItem('user') === 'null') {
       window.location.pathname = '/index.html'
     }
 });
@@ -81,7 +81,7 @@ function addItem(id) {
 function contains(id, tempList) {
     for (let i = 0; i < tempList.length; i++) {
         let prod = tempList[i];
-        if(prod.id == id)
+        if(prod.id === id)
             return true;
     }
     return false;
