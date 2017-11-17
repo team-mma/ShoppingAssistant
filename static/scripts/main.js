@@ -10,6 +10,9 @@ var stopFunction;
 let parentDiv = $("#templatedLists");
 
 $(document).ready(function () {
+  if (localStorage.getItem('user') == 'null') {
+    window.location.pathname = '/index.html'
+  }
     displayShoppingList();
 });
 
@@ -115,23 +118,8 @@ function showUndo(i) {
   }
 }
 
-
-//Helper method to decrease quantity
-function decreaseQuantity(id, tempList) {
-    for (let i = 0; i < tempList.length; i++) {
-        let prod = tempList[i];
-        if (prod.id === id) {
-            let prodTitle = tempList[i].productTitle;
-            tempList[i].productQuantity =
-                tempList[i].productQuantity - 1;
-            return;
-        }
-    }
+function logout() {
+  localStorage.setItem('user',null);
+  localStorage.setItem('password',null);
+  console.log("logout: user and pw set to null");
 }
-
-//Helper method to delete an item
-function deleteItemFromStorage(id, tmpList) {
-    for (let i = 0; i < tmpList.length; i++) {
-        let prod = tmpList[i];
-      }
-    }

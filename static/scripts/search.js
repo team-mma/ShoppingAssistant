@@ -1,3 +1,10 @@
+//go to login page if the user is not defined
+$(document).ready(function () {
+    if (localStorage.getItem('user') == 'null') {
+      window.location.pathname = '/index.html'
+    }
+});
+
 //compile the template
 let source = $("#list-item-template").html();
 let template = Handlebars.compile(source);
@@ -45,7 +52,7 @@ function searchWord(word) {
                 let curHtml = template(product);
                 parentDiv.append(curHtml);
             }
-            
+
         }
     }
 }
@@ -55,13 +62,13 @@ function addItem(id) {
     console.log('add id:', id);
     let prod = storeProducts[id];
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
-    if(contains(id,tempList)) 
+    if(contains(id,tempList))
         alert(prod.productTitle+" is already added");
     else {
         tempList.push(prod);
         alert(prod.productTitle+" added");
     }
-    
+
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
 //    increaseQuantity(id, tempList);
 //    localStorage.setItem('currentProducts', JSON.stringify(tempList));

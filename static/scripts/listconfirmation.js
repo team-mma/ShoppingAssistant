@@ -3,6 +3,9 @@ let template = Handlebars.compile(source);
 let parentDiv = $("#templatedConfs");
 
 $(document).ready(function () {
+    if (localStorage.getItem('user') == 'null') {
+      window.location.pathname = '/index.html'
+    }
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
 
     for (let i = 0; i < tempList.length; i++) {
@@ -11,3 +14,9 @@ $(document).ready(function () {
         parentDiv.append(curHtml);
     }
 });
+
+function logout() {
+  localStorage.setItem('user',null);
+  localStorage.setItem('password',null);
+  console.log("logout: user and pw set to null");
+}
