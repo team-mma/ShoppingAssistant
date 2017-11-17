@@ -19,6 +19,8 @@ function displayShoppingList(){
     parentDiv.html("");
     let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
     for (let i = 0; i < currentProductsList.length; i++) {
+        currentProductsList[i].productCost=Number(currentProductsList[i].unitCost*currentProductsList[i].productQuantity).toFixed(2);
+        currentProductsList[i].productAmount=currentProductsList[i].unitAmount*currentProductsList[i].productQuantity;
         let curData = currentProductsList[i];
         let curHtml = template(curData);
         parentDiv.append(curHtml);
@@ -41,6 +43,10 @@ function increaseQuantity(id, tempList) {
         if (prod.id === id) {
             tempList[i].productQuantity =
                 tempList[i].productQuantity + 1;
+            tempList[i].productCost =
+                Number(tempList[i].unitCost*(tempList[i].productQuantity)).toFixed(2);
+            tempList[i].productAmount =
+                tempList[i].unitAmount*(tempList[i].productQuantity);
             return;
         }
     }
@@ -75,6 +81,10 @@ function decreaseQuantityOrDelete(id, tempList) {
               console.log("quantity decreased");
               tempList[i].productQuantity =
                 tempList[i].productQuantity - 1;
+              tempList[i].productCost =
+                tempList[i].unitCost*(tempList[i].productQuantity);
+              tempList[i].productAmount =
+                tempList[i].unitAmount*(tempList[i].productQuantity);
                 return;
             }
             else {

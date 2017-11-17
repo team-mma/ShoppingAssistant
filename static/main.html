@@ -183,13 +183,11 @@
 <script id="list-item-template" type="text/x-handlebars-template">
 	<div id="swipeRight" ontouchstart=touchStart(event,'swipeRight'); ontouchend="touchEnd(event, {{id}});" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
 		<li id={{id}}>
-			<!--<i onclick="increaseItemCount({{id}})" class="rectangle"></i>-->
-			<!--<i onclick="removeItem({{id}})" class="rectangle"></i>-->
 			<img src="{{productPic}}" />
 			<h3>{{productTitle}}</h3>
-			<p>Quantity: {{productQuantity}}&nbsp &nbsp
-			   {{productAmount}} {{productUnits}} each&nbsp &nbsp
-			   {{productCost}} each</p>
+			<p>Quantity: {{productQuantity}} &nbsp &nbsp
+			   {{productAmount}} {{productUnits}} &nbsp &nbsp
+			   ${{productCost}} </p>
 		</li>
 	</div>
 </script>
