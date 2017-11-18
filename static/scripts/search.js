@@ -1,5 +1,6 @@
 //go to login page if the user is not defined
 $(document).ready(function () {
+    console.log('user',localStorage.getItem('user'));
     if (localStorage.getItem('user') === 'null') {
       window.location.pathname = '/index.html'
     }
@@ -38,9 +39,10 @@ function startDictation() {
     }
 }
 
-// Search the given word in the store database and display the results
-function searchWord(word) {
-    console.log('word searched: ',word);
+word = ""
+
+function displayShoppingList(){
+    console.log('displayShoppingList word',word);
     parentDiv.html("");
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     for(let i = 0; i < storeProducts.length; i++) {
@@ -57,6 +59,13 @@ function searchWord(word) {
     }
 }
 
+// Search the given word in the store database and display the results
+function searchWord(word) {
+    console.log('word searched: ',word);
+    word = word;
+    displayShoppingList();
+}
+
 //Add an item in current products, if it is not already added
 function addItem(id) {
     console.log('add id:', id);
@@ -70,11 +79,7 @@ function addItem(id) {
     }
 
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
-//    increaseQuantity(id, tempList);
-//    localStorage.setItem('currentProducts', JSON.stringify(tempList));
-//    let curData = tempList[id];
-//    let curHtml = template(curData);
-//    document.getElementById(id).innerHTML = curHtml;
+    displayShoppingList()
 }
 
 // Helper method to check if a prod is already present in the list
