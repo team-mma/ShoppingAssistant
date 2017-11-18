@@ -1,0 +1,14 @@
+.docked-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.docked-top {
+    position: fixed;
+    top: 0;
+}
+
+.filled {
+  background-color: #CCCCCC;
+  width: 100%
+}
