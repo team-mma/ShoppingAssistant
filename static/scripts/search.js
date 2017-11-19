@@ -12,6 +12,8 @@ let template = Handlebars.compile(source);
 
 let parentDiv = $("#templatedLists");
 
+word = ""
+
 <!-- HTML5 Speech Recognition API -->
 function startDictation() {
     document.getElementById('transcript').value = "Listening...";
@@ -29,7 +31,7 @@ function startDictation() {
             word = e.results[0][0].transcript;
             document.getElementById('transcript').value = word;
             recognition.stop();
-            searchWord(word);
+            searchWord();
         };
 
         recognition.onerror = function (e) {
@@ -38,8 +40,6 @@ function startDictation() {
 
     }
 }
-
-word = ""
 
 function displayShoppingList(){
     console.log('displayShoppingList word',word);
@@ -60,7 +60,7 @@ function displayShoppingList(){
 }
 
 // Search the given word in the store database and display the results
-function searchWord(word) {
+function searchWord() {
     console.log('word searched: ',word);
     word = word;
     displayShoppingList();
