@@ -5,7 +5,7 @@ let template = Handlebars.compile(source);
 let undosource = $("#undo-item-template").html();
 let undotemplate = Handlebars.compile(undosource);
 let undoBool = 0;
-var stopFunction;
+let stopFunction;
 
 let parentDiv = $("#templatedLists");
 
