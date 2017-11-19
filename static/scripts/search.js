@@ -11,6 +11,7 @@ let source = $("#list-item-template").html();
 let template = Handlebars.compile(source);
 
 let parentDiv = $("#templatedLists");
+let heading = $("#heading");
 
 word = ""
 
@@ -44,7 +45,12 @@ function startDictation() {
 function displayShoppingList(){
     console.log('displayShoppingList word',word);
     parentDiv.html("");
+    console.log('parent div c1:',parentDiv.length);
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
+    
+    // This is a local var to count the number of matching products
+    count = 0;
+    
     for(let i = 0; i < storeProducts.length; i++) {
         let product = storeProducts[i];
         if(product.productTitle.toLowerCase().includes(word.toLowerCase())) {
@@ -53,10 +59,12 @@ function displayShoppingList(){
             if(!contains(i,tempList)) {
                 let curHtml = template(product);
                 parentDiv.append(curHtml);
+                count++;
             }
-
         }
     }
+    if(count == 0)
+    parentDiv.text('No Items Found!');
 }
 
 // Search the given word in the store database and display the results
