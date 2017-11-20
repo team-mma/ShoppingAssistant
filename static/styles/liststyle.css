@@ -1,28 +1,31 @@
-* {margin: 0; padding: 0;}
+* {
+    margin: 0;
+    padding: 0;
+}
 
 .nopadding {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 @media (max-width: 480px) {
-  .column {
-    float: none;
-    width: 100%
-  }
+    .column {
+        float: none;
+        width: 100%
+    }
 }
 
 h1 {
-  font: bold 30px/1.5 Helvetica, Verdana, sans-serif;
-  background-color: #eee
+    font: bold 30px/1.5 Helvetica, Verdana, sans-serif;
+    background-color: #eee
 }
 
 h2 {
-  /*margin: 0px 0px 0px 0px;*/
-  font: bold 22px/1.5 Helvetica, Verdana, sans-serif;
-  /*padding: 10px;*/
-  /*width: 380px;*/
-  background-color: #eee
+    /*margin: 0px 0px 0px 0px;*/
+    font: bold 22px/1.5 Helvetica, Verdana, sans-serif;
+    /*padding: 10px;*/
+    /*width: 380px;*/
+    background-color: #eee
 }
 
 i {
@@ -40,74 +43,99 @@ i {
 }
 
 .left {
-  border-color: red;
-  float: right;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+    border-color: red;
+    float: right;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 ul {
-  list-style-type: none;
-  background-color: #eee;
-  border-style: none none groove none;
-  /*width: 400px;*/
+    list-style-type: none;
+    background-color: #eee;
+    border-style: none none groove none;
+    /*width: 400px;*/
 }
 
 h3 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
 }
 
-li i{
-  /*margin: 18px 0px 0px 0px;*/
-  /*width: 0px;*/
+.swipe {
+    background-size: 100% 200%;
+    background: #CCCCCC
+    linear-gradient(to right,
+            lightgreen,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #eee,
+            #ff8547);
+    transition: background-position 1s;
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+}
+
+.swipe:hover {
+    background-position: 0 -100%;
 }
 
 li img {
-  float: left;
-  margin: 0 5px 0 10px;
-  width: 50px;
+    float: left;
+    margin: 0 5px 0 10px;
+    width: 50px;
 }
 
 li p {
-  float: left;
-  font: 200 16px/1.5 Arial, Helvetica, sans-serif;
+    float: left;
+    font: 200 16px/1.5 Arial, Helvetica, sans-serif;
 }
 
-.rightpar{
-  float: right;
-  font: 200 16px/1.5 Arial, Helvetica, sans-serif;
+.rightpar {
+    float: right;
+    font: 200 16px/1.5 Arial, Helvetica, sans-serif;
 }
 
 li {
-  border-style: groove none none none;
-  padding: 10px;
-  overflow: auto;
+    border-style: groove none none none;
+    padding: 10px;
+    overflow: auto;
 }
 
 .button {
-  /*max-width: 400px;*/
-  float: left;
-  font: bold 20px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 5px 10px 5px 10px;
+    /*max-width: 400px;*/
+    float: left;
+    font: bold 20px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 5px 10px 5px 10px;
     border: 2px solid #CCCCCC;
     border-right-color: #333333;
     border-bottom-color: #333333;
 }
 
 .button:hover {
-  background-color: #DDDDDD;
-  cursor: pointer;
+    background-color: #DDDDDD;
+    cursor: pointer;
 }
 
 .green {
-  float: right;
-  background-color: #90EE90;
+    float: right;
+    background-color: #90EE90;
 }
 
 .green:hover {
-  background-color: #70DD70;
-  cursor: pointer;
+    background-color: #70DD70;
+    cursor: pointer;
+}
+
+.animate {
+    transition: transform 0.3s ease-out;
 }

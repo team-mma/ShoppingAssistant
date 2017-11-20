@@ -133,9 +133,11 @@
             if ('left' === swipeDirection) {
                 // REPLACE WITH YOUR ROUTINES
                 removeItem(id);
+                $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
             } else if ('right' === swipeDirection) {
                 // REPLACE WITH YOUR ROUTINES
                 increaseItemCount(id);
+                $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + 100-this.index*50 + 'px,0,0)');
             }
         }
 
@@ -176,14 +178,14 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script id="undo-item-template" type="text/x-handlebars-template">
 		<li id={{id}}>
-			<!--<i onclick="increaseItemCount({{id}})" class="rectangle"></i>-->
-			<!--<i onclick="removeItem({{id}})" class="rectangle"></i>-->
 			<i onclick="undo()" class="button">Undo Delete</i>
 		</li>
 </script>
 <script id="list-item-template" type="text/x-handlebars-template">
 	<div id="swipeRight" ontouchstart=touchStart(event,'swipeRight'); ontouchend="touchEnd(event, {{id}});" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
 		<li id={{id}}>
+			<i class="arrow left"></i>
+			<i class="arrow right"></i>
 			<img src="{{productPic}}" />
 			<h3>{{productTitle}}</h3>
 			<p>Quantity: {{productQuantity}} &nbsp &nbsp
