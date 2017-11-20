@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
+	<link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
+	<title>Shopping Assistant</title>
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-md-6 nopadding">
+			<h1>
+				<script type="text/javascript"> //inserting user name
+                document.write(localStorage.getItem('user'))
+				</script>
+				's Shopping History
+			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-md-6 nopadding">
+			<ul class="productlist">
+				<li >
+					<a href="listconfirmation.html" class="button green">Done! Approve List</a>
+				</li>
+				<strong>(Swipe items to the left to reduce quantity and to the right to add quantity)</strong>
+				<div id="templatedLists" class="nomargin">
+					<!--templated list items will be put into this div-->
+				</div>
+				<li class="docked-bottom filled">
+					<a onclick="logout()" href="../index.html" class="button">Logout</a>
+					<a href="search.html" class="button green">Add product</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
+<script id="undo-item-template" type="text/x-handlebars-template">
+		<li id={{id}}>
+			<i onclick="undo()" class="button">Undo Delete</i>
+		</li>
+</script>
+<script id="list-item-template" type="text/x-handlebars-template">
+	<div id="swipeRight" ontouchstart=touchStart(event,'swipeRight'); ontouchend="touchEnd(event, {{id}});" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+		<li id={{id}}>
+			<i class="arrow left"></i>
+			<i class="arrow right"></i>
+			<img src="{{productPic}}" />
+			<h3>{{productTitle}}</h3>
+			<p>Quantity: {{productQuantity}} &nbsp &nbsp
+			   {{productAmount}} {{productUnits}} &nbsp &nbsp
+			   ${{productCost}} </p>
+		</li>
+	</div>
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script src="../scripts/swipe.js"></script>
+<script src="../scripts/main.js"></script>
+</body>
+</html>

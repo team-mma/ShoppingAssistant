@@ -4,35 +4,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles/liststyle.css">
-	<title>Search Results</title>
+	<title>Time Remaining</title>
 </head>
 
-<body>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-md-12">
-			<h1>Search Results</h1>
-			
-			<h2>From your shopping History</h2>
-			<ol>
-				<li onclick="addItem(2)">Hershey's Milk Chocolate</li>
-				<li>Ghirardelli Pumpkin Spice Squares</li>
-			</ol>
-			<h2>Popular Results for 'chocolate'</h2>
-			<ol>
-				<li>Hershey's Dark Chocolate</li>
-				<li>Lindt Assorted Truffles</li>
-				<li>Lindt Dark Chocolate Truffles</li>
-				<li>Lindt Peanut Butter Truffles</li>
-				<li>Reeses Peanut Butter Cups</li>
-			</ol>
-			<a href="search.html">Add another product</a>
+			<h1>We are picking up your products for you.</h1><br />
+			<h2 id="timer">Your cart will be ready in 14 minutes.</h2><br />
+			<a href="orderready.html">14 minutes passed!</a>
 			<br />
 			<br />
-			<a href="main.html">Back to list</a>
+			<a href="main.html">Home</a>
 		</div>
 	</div>
 </div>
@@ -45,6 +31,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-<script src="scripts/main.js"></script>
-</body>
+<script src="../scripts/timeuntilpickup.js"></script>
 </html>
