@@ -15,25 +15,34 @@
 
 <h1>Shopping Assistant</h1>
 
-<form id="frm1" action="/action_page.php">
-  Name: <input type="text" name="fname" value=""><br>
-<br>
-  Password: <input type="text" name="lname" value=""><br><br>
-</form>
-
 <p>To login as Larry, type "Larry" for the name and "12345" for the password.</p>
 <p>To login as Lucy, type "Lucy" for the name and "6789" for the password.</p>
-
-
-<!--<i onclick="login()" class="button">Login</i>-->
-<form action="pages/main.html" class="inline">
-    <button class="float-left submit-button" >Submit</button>
+<form id="frm1" class="form-horizontal">
+	<div class="form-group">
+		<div class="col-sm-4 col-md-4">
+			<p>Name:</p>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<input type="text" name="fname" value="">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-4 col-md-4">
+			<p>Password:</p>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<input type="text" name="lname" value="">
+		</div>
+	</div>
 </form>
-
-
-<p id="demo"></p>
-
-
+<br />
+<form action="pages/main.html" class="inline">
+	<div class="form-group">
+		<div class="col-sm-6">
+			<button class="float-left submit-button" style="padding: 5px 57px">Submit</button>
+		</div>
+	</div>
+</form>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

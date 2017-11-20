@@ -4,44 +4,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
+	<link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
 	<title>Confirmation</title>
 </head>
 
 <body>
-<div class="container">
+<div class="container fill">
 	<div class="row">
-		<div class="col-sm-12 col-md-12">
+		<div class="col-sm-12 col-md-12 nopadding">
 			<h3>Tap phones OR press send</h3>
 			<br />
-			<a href="timeuntilpickup.html" class="button">Send to Shopping Assistant</a><br />
+			<div class="wrapper">
+				<a href="timeuntilpickup.html" class="button green">Send to Shopping Assistant</a>
+			</div>
 		</div>
 	</div>
-</div>
-<br />
-<br />
-<div class="container">
+	<br />
 	<div class="row">
-		<div class="col-sm-12 col-md-12">
+		<div class="col-sm-12 col-md-12 nopadding">
 			<ul>
-				<h2>Your Approved Shopping List</h2>
-				<!--<li>Hershey's Milk Chocolate - (1)</li>
-				<li>Danone Cheese - (2)</li>
-				<li>Eggs - (6)</li>
-				<li>Product x - (n)</li>
-				<li>Product x - (n)</li>
-				<li>Product x - (n)</li>
-				<li>Product x - (n)</li>
-				<li>Product x - (n)</li>
-				<li>Product x - (n)</li>-->
+				<h4>Your Approved Shopping List</h4>
 				<div id="templatedConfs">
 					<!--templated list items will be put into this div-->
 				</div>
-				<li>
+				<li class="docked-bottom filled">
 					<a onclick="logout()" href="../index.html" class="button">Logout</a>
-					<a href="main.html" class="button">Edit List</a>
+					<a href="main.html" class="button" style="float: right;">Edit List</a>
 				</li>
 			</ul>
 		</div>
@@ -51,7 +42,7 @@
 <script id="conf-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
 		<p>{{productTitle}}: {{productQuantity}} </p>
-		<p class="rightpar">{{productCost}}</p>
+		<p class="rightpar">${{productCost}}</p>
 	</li>
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
