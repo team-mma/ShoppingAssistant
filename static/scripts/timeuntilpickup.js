@@ -1,13 +1,7 @@
-$('#timer').click(changeText);
-
-function changeText() {
-    $(this).text("Changed text");
-}
-
 let remainingTime = 14 * 60;
 
 $(document).ready(function () {
-  if (localStorage.getItem('user') == 'null') {
+  if (localStorage.getItem('user') === 'null') {
     window.location.pathname = '/index.html'
   }
     setInterval(function () {
