@@ -1,14 +1,14 @@
 .speech {
     border: 1px solid #DDD;
-    width: 300px;
-    padding: 0;
-    margin-bottom: 10px
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .speech input {
     border: 0;
-    width: 240px;
-    display: inline-block;
+    margin-left: 10px;
     height: 30px;
 }
 
