@@ -44,9 +44,9 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script id="list-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
-		<i onclick="addItem({{id}})" class="arrow right"></i>
 		<img src="{{productPic}}" />
 		<h3>{{productTitle}}</h3>
+		<img onclick="addItem({{id}})" src="images/plus.svg" style="width: 20px; height: 20px; float: right"/>
 		<p>Quantity: {{productQuantity}}&nbsp &nbsp
 		   {{productAmount}} {{productUnits}} each&nbsp &nbsp
 		   {{productCost}} each</p>

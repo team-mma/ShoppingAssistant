@@ -8,7 +8,6 @@ $(document).ready(function () {
     localStorage.setItem('password','12345');
     localStorage.setItem('shoppingHistoryProducts',JSON.stringify(shoppingHistoryProducts[0]));
     localStorage.setItem('currentProducts',JSON.stringify(shoppingHistoryProducts[0]));
-
 });
 
 function login() {
