@@ -1,7 +1,29 @@
-.speech {border: 1px solid #DDD; width: 300px; padding: 0; margin-bottom: 10px}
+.speech {
+    border: 1px solid #DDD;
+    width: 300px;
+    padding: 0;
+    margin-bottom: 10px
+}
 
-.speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+.speech input {
+    border: 0;
+    width: 240px;
+    display: inline-block;
+    height: 30px;
+}
 
-.voice-search {text-align: center; margin: 10px}
+.voice-search {
+    text-align: center;
+    margin: 10px
+}
 
-.voice-search img {width:100px;height:100px;text-align: center }
+.voice-search img {
+    width: 100px;
+    height: 100px;
+    text-align: center
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
