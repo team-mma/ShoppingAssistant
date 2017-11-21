@@ -88,9 +88,13 @@ li p {
     font: 200 16px/1.5 Arial, Helvetica, sans-serif;
 }
 
+.bold {
+  font: 200 20px/1.5 Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 .rightpar {
     float: right;
-    font: 200 16px/1.5 Arial, Helvetica, sans-serif;
 }
 
 li {

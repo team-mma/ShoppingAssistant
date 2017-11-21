@@ -27,8 +27,11 @@
 		<div class="col-sm-12 col-md-12 nopadding">
 			<ul>
 				<h4>Your Approved Shopping List</h4>
-				<div id="templatedConfs">
+				<div id="templatedConfs" >
 					<!--templated list items will be put into this div-->
+				</div>
+				<div id="confSummary">
+					<!--templated total order cost goes here-->
 				</div>
 				<li class="docked-bottom filled">
 					<a onclick="logout()" href="../index.html" class="button">Logout</a>
@@ -41,10 +44,20 @@
 
 <script id="conf-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
-		<p>{{productTitle}}: {{productQuantity}} </p>
+		<p><span style="font-weight:bold">{{productQuantity}}</span>&nbsp {{productTitle}}</p>
 		<p class="rightpar">${{productCost}}</p>
 	</li>
 </script>
+
+<script id="conf-summary-template" type="text/x-handlebars-template">
+<li>
+	<p class="bold" >{{text}}
+	</p>
+	<p class="bold rightpar">${{totalCost}}
+	</p>
+</li>
+</script>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
