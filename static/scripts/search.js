@@ -1,8 +1,8 @@
 //go to login page if the user is not defined
 $(document).ready(function () {
-    console.log('user',localStorage.getItem('user'));
+    console.log('user', localStorage.getItem('user'));
     if (localStorage.getItem('user') === 'null') {
-      window.location.pathname = '/index.html'
+        window.location.pathname = '/index.html'
     }
 });
 
@@ -13,9 +13,8 @@ let template = Handlebars.compile(source);
 let parentDiv = $("#templatedLists");
 let heading = $("#heading");
 
-word = ""
+word = "";
 
-<!-- HTML5 Speech Recognition API -->
 function startDictation() {
     document.getElementById('transcript').value = "Listening...";
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
@@ -42,48 +41,53 @@ function startDictation() {
     }
 }
 
-function displayShoppingList(){
-    console.log('displayShoppingList word',word);
+function displayShoppingList() {
+    console.log('displayShoppingList word', word);
     parentDiv.html("");
-    console.log('parent div c1:',parentDiv.length);
+    console.log('parent div c1:', parentDiv.length);
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
-    
+
     // This is a local var to count the number of matching products
     count = 0;
-    
-    for(let i = 0; i < storeProducts.length; i++) {
+
+    for (let i = 0; i < storeProducts.length; i++) {
         let product = storeProducts[i];
-        if(product.productTitle.toLowerCase().includes(word.toLowerCase())) {
+        if (product.productTitle.toLowerCase().includes(word.toLowerCase())) {
             console.log(product.productTitle);
             // Display the product only if it is not already added in the currentProductList
-            if(!contains(i,tempList)) {
+            if (!contains(i, tempList)) {
                 let curHtml = template(product);
                 parentDiv.append(curHtml);
                 count++;
             }
         }
     }
-    if(count == 0)
-    parentDiv.text('No Items Found!');
+    if (count === 0)
+        parentDiv.text('No Items Found!');
 }
 
 // Search the given word in the store database and display the results
 function searchWord() {
-    console.log('word searched: ',word);
+    console.log('word searched: ', word);
     word = word;
     displayShoppingList();
 }
+
+$('#labnol').submit(function () {
+    searchWord();
+    return false;
+});
 
 //Add an item in current products, if it is not already added
 function addItem(id) {
     console.log('add id:', id);
     let prod = storeProducts[id];
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
-    if(contains(id,tempList))
-        alert(prod.productTitle+" is already added");
+    if (contains(id, tempList))
+        alert(prod.productTitle + " is already added");
     else {
         tempList.push(prod);
-        alert(prod.productTitle+" added");
+        alert(prod.productTitle + " added");
     }
 
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
@@ -94,7 +98,7 @@ function addItem(id) {
 function contains(id, tempList) {
     for (let i = 0; i < tempList.length; i++) {
         let prod = tempList[i];
-        if(prod.id === id)
+        if (prod.id === id)
             return true;
     }
     return false;
