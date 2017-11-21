@@ -65,18 +65,8 @@ h3 {
     background-size: 100% 200%;
     background: #CCCCCC
     linear-gradient(to right,
-            lightgreen,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #eee,
-            #ff8547);
+            gray,
+            #919191);
     transition: background-position 1s;
     -webkit-transition: background-position 1s;
     -moz-transition: background-position 1s;
