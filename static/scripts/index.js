@@ -18,23 +18,21 @@ function login() {
     password += x.elements[1].value;
     console.log(name);
     console.log(password);
-    if (("Larry").valueOf() == name.valueOf() && ("12345").valueOf() == password.valueOf()) {
+    if (("Larry").valueOf() === name.valueOf() && ("12345").valueOf() === password.valueOf()) {
       localStorage.setItem('user',name);
       localStorage.setItem('password',password);
       localStorage.setItem('shoppingHistoryProducts',JSON.stringify(shoppingHistoryProducts[0]));
       localStorage.setItem('currentProducts',JSON.stringify(shoppingHistoryProducts[0]));
-      window.location.pathname = '/main.html'
+      window.location.href = '../pages/main.html'
     }
-    else if (("Lucy").valueOf() == name.valueOf() && ("6789").valueOf() == password.valueOf()) {
+    else if (("Lucy").valueOf() === name.valueOf() && ("6789").valueOf() === password.valueOf()) {
       localStorage.setItem('user',name);
       localStorage.setItem('password',password);
       localStorage.setItem('shoppingHistoryProducts',JSON.stringify(shoppingHistoryProducts[1]));
       localStorage.setItem('currentProducts',JSON.stringify(shoppingHistoryProducts[1]));
-      window.location.pathname = '/main.html';
+      window.location.href = '../pages/main.html';
     }
     else {
       alert("Invalid login: Try Larry 12345 or Lucy 6789");
     }
-    return;
-    //document.getElementById("demo").innerHTML = password;
 }
