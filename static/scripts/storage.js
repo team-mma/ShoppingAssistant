@@ -9,42 +9,42 @@ shoppingHistoryProductsLarry = [
       'unitAmount': 2, 'productAmount': 2, 'productUnits': 'qts', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
   },
   {
-      'productTitle': 'Danone Cheese', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+      'productTitle': 'Danone Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
       'unitAmount': 12, 'productAmount': 12, 'productUnits': 'oz', 'unitCost':7.00, 'productCost': 7.00, 'id': 1
   },
   {
-      'productTitle': 'Lindt Assorted Truffles', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+      'productTitle': 'Lindt Assorted Truffles', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
       'unitAmount': 16, 'productAmount': 16, 'productUnits': 'oz', 'unitCost':7.50, 'productCost': 7.50, 'id': 2
   },
   {
-      'productTitle': 'Hollandia Butter', 'productPic': '../images/milk.svg', 'productQuantity': 3,
+      'productTitle': 'Hollandia Butter', 'productPic': '../images/butter.svg', 'productQuantity': 3,
       'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':3.60, 'productCost': 3.60, 'id': 3
   },
   {
-      'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+      'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/cereal.svg', 'productQuantity': 1,
       'unitAmount': 14, 'productAmount': 14, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 4
   }
 ];
 
 shoppingHistoryProductsLucy = [
   {
-      'productTitle': 'Lucys Favorite Butter', 'productPic': '../images/milk.svg', 'productQuantity': 2,
-      'unitAmount': 2, 'productAmount': 2, 'productUnits': 'qts', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
+      'productTitle': 'Lucys Favorite Butter', 'productPic': '../images/butter.svg', 'productQuantity': 2,
+      'unitAmount': 2, 'productAmount': 2, 'productUnits': 'oz', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
   },
   {
-      'productTitle': 'Danone Cheese', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-      'unitAmount': 12, 'productAmount': 12, 'productUnits': 'oz', 'unitCost':7.00, 'productCost': 7.00, 'id': 1
+      'productTitle': 'Hersheys Milk Chocolate', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
+      'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 1
   },
   {
-      'productTitle': 'Lindt Assorted Truffles', 'productPic': '../images/milk.svg', 'productQuantity': 1,
-      'unitAmount': 16, 'productAmount': 16, 'productUnits': 'oz', 'unitCost':7.50, 'productCost': 7.50, 'id': 2
+      'productTitle': 'Hollandia Milk', 'productPic': '../images/butter.svg', 'productQuantity': 2,
+      'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':5.00, 'productCost': 3.60, 'id': 2
   },
   {
-      'productTitle': 'Hollandia Butter', 'productPic': '../images/milk.svg', 'productQuantity': 3,
-      'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':3.60, 'productCost': 3.60, 'id': 3
+      'productTitle': 'Cheddar Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+      'unitAmount': 12, 'productAmount': 12, 'productUnits': 'oz', 'unitCost':7.00, 'productCost': 7.00, 'id': 3
   },
   {
-      'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+      'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/cereal.svg', 'productQuantity': 1,
       'unitAmount': 14, 'productAmount': 14, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 4
   }
 ];
@@ -58,19 +58,19 @@ let storeProducts = [
         'unitAmount': 2, 'productAmount': 2, 'productUnits': 'qts', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
     },
     {
-        'productTitle': 'Danone Cheese', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Danone Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
         'unitAmount': 12, 'productAmount': 12, 'productUnits': 'oz', 'unitCost':7.00, 'productCost': 7.00, 'id': 1
     },
     {
-        'productTitle': 'Lindt Assorted Truffles', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Lindt Assorted Truffles', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
         'unitAmount': 16, 'productAmount': 16, 'productUnits': 'oz', 'unitCost':7.50, 'productCost': 7.50, 'id': 2
     },
     {
-        'productTitle': 'Hollandia Butter', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Hollandia Butter', 'productPic': '../images/butter.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':3.60, 'productCost': 3.60, 'id': 3
     },
     {
-        'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/cereal.svg', 'productQuantity': 1,
         'unitAmount': 14, 'productAmount': 14, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 4
     },
     {
@@ -78,27 +78,27 @@ let storeProducts = [
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 5
     },
     {
-        'productTitle': 'Hersheys Dark Chocolate', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Hersheys Dark Chocolate', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 6
     },
     {
-        'productTitle': 'Chocolate A', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate A', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 7
     },
     {
-        'productTitle': 'Chocolate B', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate B', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 8
     },
     {
-        'productTitle': 'Chocolate C', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate C', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 9
     },
     {
-        'productTitle': 'Chocolate D', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate D', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 10
     },
     {
-        'productTitle': 'Chocolate E', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Chocolate E', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 11
     }
 ];
