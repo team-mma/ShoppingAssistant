@@ -15,6 +15,11 @@
     }
 }
 
+#templatedLists {
+  overflow: scroll;
+  /*background-color: #33e;*/
+}
+
 h1 {
     font: bold 30px/1.5 Helvetica, Verdana, sans-serif;
     background-color: #eee;
