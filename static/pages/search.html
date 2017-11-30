@@ -15,6 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
 	<link rel="stylesheet" type="text/css" href="../styles/searchstyle.css">
+  <link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<title>Product Search</title>
 </head>
@@ -28,7 +29,7 @@
 			<div class="voice-search">
 				<img onclick="startDictation()" src="../images/voice-search-icon.png" />
 			</div>
-			
+
 			<!-- Search Form -->
 			<!-- Supports search by both voice and text -->
 			<form id="labnol" onsubmit="searchWord()">
@@ -36,12 +37,15 @@
 					<input type="text" name="q" id="transcript" placeholder="Say 'CHOCOLATE'..." />
 				</div>
 			</form>
-			<a href="main.html" style="float: right"><h4>Back to list</h4></a>
+			<!--<a href="main.html" style="float: right"><h4>Back to list</h4></a>-->
 			<h2 id="heading">Product List</h2>
 			<ul class="productlist">
 				<div id="templatedLists" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
+        <li class="docked-bottom filled">
+            <a href="main.html" class="rightpar button">Back to List</a>
+        </li>
 			</ul>
 		</div>
 	</div>

@@ -101,10 +101,6 @@ li p {
   font-weight: bold;
 }
 
-.rightpar {
-    float: right;
-}
-
 li {
     border-style: groove none none none;
     padding: 10px;
@@ -122,6 +118,10 @@ li {
     border: 2px solid #CCCCCC;
     border-right-color: #333333;
     border-bottom-color: #333333;
+}
+
+.rightpar {
+    float: right;
 }
 
 .button:hover {
