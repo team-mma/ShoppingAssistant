@@ -32,7 +32,15 @@ function displayShoppingList() {
 
 //Increases item count in current products
 function increaseItemCount(id) {
-    console.log('add id:', id);
+    console.log('add button clicked id:', id);
+    
+    // Google Analytics Part
+    if ("ga" in window) {
+        tracker = ga.getAll()[0];
+        if (tracker)
+            tracker.send('event', 'button', 'click');
+    }
+    
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
