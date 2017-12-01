@@ -75,6 +75,15 @@ function touchEnd(event, id) {
 }
 
 function touchCancel(event) {
+    console.log('touch cancel');
+    
+    // Google Analytics Part
+    if ("ga" in window) {
+        tracker = ga.getAll()[0];
+        if (tracker)
+            tracker.send('event', 'touch', 'cancel');
+    }
+    
     // reset the variables back to default values
     fingerCount = 0;
     startX = 0;

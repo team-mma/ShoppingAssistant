@@ -64,7 +64,14 @@ function increaseQuantity(id, tempList) {
 }
 
 function removeItem(id) {
-    console.log('remove id:', id);
+    console.log('remove button clicked id:', id);
+    // Google Analytics Part
+    if ("ga" in window) {
+        tracker = ga.getAll()[0];
+        if (tracker)
+            tracker.send('event', 'button', 'click');
+    }
+    
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     decreaseQuantityOrDelete(id, tempList);
     if (undoBool === 1) {
