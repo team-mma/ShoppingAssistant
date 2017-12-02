@@ -54,7 +54,7 @@ let shoppingHistoryProducts = [shoppingHistoryProductsLarry,shoppingHistoryProdu
 // This is the complete database of all the products in the store
 let storeProducts = [
     {
-        'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 1,
+        'productTitle': 'Hollandia Milk', 'productPic': '../images/milk.svg', 'productQuantity': 1,
         'unitAmount': 2, 'productAmount': 2, 'productUnits': 'qts', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
     },
     {
@@ -71,7 +71,7 @@ let storeProducts = [
     },
     {
         'productTitle': 'Honey Bunches of Oats Cereal', 'productPic': '../images/cereal.svg', 'productQuantity': 1,
-        'unitAmount': 14, 'productAmount': 14, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 4
+        'unitAmount': 14, 'productAmount': 14, 'productUnits': 'oz', 'unitCost':5.99, 'productCost': 5.99, 'id': 4
     },
     {
         'productTitle': 'Hersheys Milk Chocolate', 'productPic': '../images/milk.svg', 'productQuantity': 1,
@@ -82,8 +82,8 @@ let storeProducts = [
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 6
     },
     {
-        'productTitle': 'Chocolate A', 'productPic': '../images/chocolate.svg', 'productQuantity': 1,
-        'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 7
+        'productTitle': 'English Cheddar Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 8, 'productAmount': 8, 'productUnits': 'qts', 'unitCost':7.00, 'productCost': 7.00, 'id': 7
     },
     {
         'productTitle': 'Chocolate B', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
@@ -100,5 +100,17 @@ let storeProducts = [
     {
         'productTitle': 'Chocolate E', 'productPic': '../images/chocolate-box.svg', 'productQuantity': 1,
         'unitAmount': 10, 'productAmount': 10, 'productUnits': 'qts', 'unitCost':6.99, 'productCost': 6.99, 'id': 11
-    }
+    },
+    {
+        'productTitle': 'Early California Olives', 'productPic': '../images/icon.svg', 'productQuantity': 1,
+        'unitAmount': 1, 'productAmount': 1, 'productUnits': 'lb', 'unitCost':11.05, 'productCost': 11.05, 'id': 12
+    },
+    {
+        'productTitle': 'Cocoa Puffs Cereal', 'productPic': '../images/cereal.svg', 'productQuantity': 1,
+        'unitAmount': 13, 'productAmount': 13, 'productUnits': 'oz', 'unitCost':5.99, 'productCost': 5.99, 'id': 13
+    },
+    {
+        'productTitle': 'Kerrygold Irish Butter', 'productPic': '../images/butter.svg', 'productQuantity': 1,
+        'unitAmount': 8, 'productAmount': 8, 'productUnits': 'oz', 'unitCost':4.99, 'productCost': 4.99, 'id': 14
+    },
 ];

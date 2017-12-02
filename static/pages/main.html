@@ -26,11 +26,11 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-6 nopadding">
 			<h1>
-				<script type="text/javascript"> //inserting user name
+				<script type="text/javascript">//inserting user name
                 document.write(localStorage.getItem('user'))
-				</script>
-				's Shopping History
+				</script>'s Shopping List
 			</h1>
+      <h6>Products from your purchase history</h6>
 		</div>
 	</div>
 	<div class="row">
@@ -39,13 +39,17 @@
 				<li >
 					<a href="listconfirmation.html" class="button green">Done! Approve List</a>
 				</li>
-				<strong>(Swipe items to the left to reduce quantity and to the right to add quantity)</strong>
+				<!--<strong>(Swipe items to the left to reduce quantity and to the right to add quantity)</strong>-->
 				<div id="templatedLists" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
 				<li class="docked-bottom filled">
 					<a onclick="logout()" href="../index.html" class="button">Logout</a>
 					<a href="search.html" class="button green">Add product</a>
+				</li>
+				<!-- New undo button -->
+				<li class="docked-bottom filled hidden">
+					<a onclick="undo2()" class="button rightpar">Undo</a>
 				</li>
 			</ul>
 		</div>
@@ -55,7 +59,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script id="undo-item-template" type="text/x-handlebars-template">
 		<li id={{id}}>
-			<i onclick="undo()" class="button">Undo Delete</i>
+			<i onclick="undo()" class="button rightpar">Undo Delete</i>
 		</li>
 </script>
 <script id="list-item-template" type="text/x-handlebars-template">
