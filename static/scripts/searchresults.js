@@ -1,8 +1,4 @@
-$(document).ready(function () {
-    if (localStorage.getItem('user') == 'null') {
-      window.location.pathname = '/index.html'
-    }
-    
+$(document).ready(function() {
     var showAlternate = localStorage.getItem('showAlternate');
     console.log('showAlternate',showAlternate);
     
