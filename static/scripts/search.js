@@ -4,10 +4,10 @@ $(document).ready(function () {
     if (localStorage.getItem('user') === 'null') {
         window.location.pathname = '/index.html'
     }
-    
+
     var showAlternate = localStorage.getItem('showAlternate');
     console.log('showAlternate',showAlternate);
-    
+
     if(showAlternate == 'true') {
         $('#back_button').attr('href','main2.html');
     } else {
@@ -96,7 +96,6 @@ function addItem(id) {
         alert(prod.productTitle + " is already added");
     else {
         tempList.push(prod);
-        alert(prod.productTitle + " added");
     }
 
     localStorage.setItem('currentProducts', JSON.stringify(tempList));

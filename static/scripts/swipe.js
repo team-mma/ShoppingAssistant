@@ -130,7 +130,7 @@ function processingRoutine(id) {
     if ('left' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES
         removeItem(id);
-        //deleteItemCompletely();
+        deleteItemCompletely();
         $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
     } else if ('right' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES

@@ -94,6 +94,7 @@ function deleteItemCompletely() {
     tempList.splice(itemToDelete,1);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
     displayShoppingList();
+    itemToDelete=-1;
   }
 }
 
