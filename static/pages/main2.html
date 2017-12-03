@@ -44,24 +44,27 @@
                         <!--templated list items will be put into this div-->
                     </div>
                     <li class="docked-bottom filled">
-                        <a onclick="logout()" href="../index2.html" class="button">Logout</a>
-                        <a href="search.html" class="button green">Add product</a>
+                        <a onclick="deleteItemCompletely();logout()" href="../index2.html" class="button">Logout</a>
+                        <a onclick="deleteItemCompletely()" href="search.html" class="button green">Add product</a>
                     </li>
                 </ul>
+                <br>
+                <br>
             </div>
         </div>
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
     <script id="undo-item-template" type="text/x-handlebars-template">
-        <li id={{id}}>
-            <i onclick="undo()" class="button">Undo Delete</i>
-        </li>
+      <li id={{id}}>
+        <p>Item Deleted</p>
+  			<i onclick="undo()" class="button rightpar">Undo</i>
+  		</li>
     </script>
     <script id="list-item-template" type="text/x-handlebars-template">
         <li id={{id}}>
-            <img onclick="increaseItemCount({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: left"></i>
- 		    <img onclick="removeItem({{id}})" src="../images/minus.png" style="width: 35px; height: 35px; float: right"></i>
+            <img onclick="deleteItemCompletely();increaseItemCount({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: left"></i>
+ 		    <img onclick="deleteItemCompletely();removeItem({{id}})" src="../images/minus.png" style="width: 35px; height: 35px; float: right"></i>
             <img src="{{productPic}}" />
             <h3>{{productTitle}}</h3>
             <p>Quantity: {{productQuantity}} &nbsp &nbsp {{productAmount}} {{productUnits}} &nbsp &nbsp ${{productCost}} </p>

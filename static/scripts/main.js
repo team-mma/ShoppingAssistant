@@ -86,6 +86,7 @@ function removeItem(id) {
 }
 
 function deleteItemCompletely() {
+  console.log("delete item completely - method accessed");
   if (itemToDelete < 0) {
     return;
   }
