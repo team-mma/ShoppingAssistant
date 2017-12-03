@@ -24,19 +24,25 @@
 <body>
 <div class="container fill">
 	<div class="row">
-		<div class="col-sm-12 col-md-12 nopadding">
-			<!--<h3>Tap phones OR press send</h3>-->
-			<br />
-			<div class="wrapper">
-				<a href="timeuntilpickup.html" class="button green">Send to Shopping Assistant</a>
-			</div>
-		</div>
+    <div class="col-sm-12 col-md-12 nopadding">
+      <div class="col-sm-12 col-md-6 nopadding">
+        <h1>Order Summary</h1>
+      </div>
+      <div class="buttonrow centeralign">
+        <a href="timeuntilpickup.html" class="button">Send to Shopping Assistant</a>
+      </div>
+    </div>
+
 	</div>
-	<br />
 	<div class="row">
 		<div class="col-sm-12 col-md-12 nopadding">
 			<ul>
-				<h4>Your Approved Shopping List</h4>
+        <li class="confirmation">
+        	<p class="bold leftpar">Product
+        	</p>
+        	<p class="bold rightpar">Cost
+        	</p>
+        </li>
 				<div id="templatedConfs" >
 					<!--templated list items will be put into this div-->
 				</div>
@@ -47,6 +53,14 @@
       <div class="docked-bottom buttonrow buttonrow2">
         <a onclick="logout()" href="../index.html" class="button">Logout</a>
         <a id="back_button" href="main.html" class="button" style="float: right;">Edit List</a>
+      </div>
+      <div class="col-sm-12 col-md-12 nopadding docked-top">
+        <div class="col-sm-12 col-md-6 nopadding">
+          <h1>Order Summary</h1>
+        </div>
+        <div class="buttonrow buttonrow1 centeralign">
+          <a href="timeuntilpickup.html" class="button">Send to Shopping Assistant</a>
+        </div>
       </div>
 		</div>
 	</div>
@@ -61,7 +75,7 @@
 
 <script id="conf-summary-template" type="text/x-handlebars-template">
 <li>
-	<p class="bold" >{{text}}
+	<p class="bold leftpar" >{{text}}
 	</p>
 	<p class="bold rightpar">${{totalCost}}
 	</p>
