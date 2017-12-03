@@ -31,22 +31,18 @@
             </h1>
             <h6>Products from your purchase history</h6>
           </div>
+          <div class="buttonrow centeralign">
+            <a href="listconfirmation.html" class="button">Done! Approve List</a>
+          </div>
 
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 nopadding">
                 <ul class="productlist">
-                    <li>
-                        <a href="listconfirmation.html" class="button green">Done! Approve List</a>
-                    </li>
-                    <!--<strong>(Press the add button to increase quantity and delete button to decrease quantity)</strong-->
                     <div id="templatedLists" class="nomargin">
                         <!--templated list items will be put into this div-->
                     </div>
-                    <li class="docked-bottom filled">
-                        <a onclick="deleteItemCompletely();logout()" href="../index2.html" class="button">Logout</a>
-                        <a onclick="deleteItemCompletely()" href="search.html" class="button green">Add Product</a>
-                    </li>
+
                 </ul>
                 <br>
                 <br>
@@ -58,8 +54,14 @@
                 </script>'s Shopping List
               </h1>
               <h6>Products from your purchase history</h6>
-              <div class="buttonrow buttonrow1 centerpar">
+              <div class="buttonrow buttonrow1 centeralign">
                 <a href="listconfirmation.html" class="button">Done! Approve List</a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 nopadding docked-bottom">
+              <div class="buttonrow buttonrow2">
+                <a onclick="deleteItemCompletely();logout()" href="../index2.html" class="button leftalign">Logout</a>
+                <a onclick="deleteItemCompletely()" href="search.html" class="button rightpar">Add Product</a>
               </div>
             </div>
         </div>
@@ -73,12 +75,15 @@
   		</li>
     </script>
     <script id="list-item-template" type="text/x-handlebars-template">
-        <li id={{id}}>
-            <img onclick="deleteItemCompletely();increaseItemCount({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: left"></i>
- 		    <img onclick="deleteItemCompletely();removeItem({{id}})" src="../images/minus.png" style="width: 35px; height: 35px; float: right"></i>
-            <img src="{{productPic}}" />
+        <li id={{id}} class="container" style="overflow:hidden">
+            <img onclick="deleteItemCompletely();increaseItemCount({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: right"></i>
+ 		        <img onclick="deleteItemCompletely();removeItem({{id}})" src="../images/minus.png" style="width: 35px; height: 35px; float: right"></i>
+            <img class="picture" src="{{productPic}}" />
+            <div class="absolute">
             <h3>{{productTitle}}</h3>
-            <p>Quantity: {{productQuantity}} &nbsp &nbsp {{productAmount}} {{productUnits}} &nbsp &nbsp ${{productCost}} </p>
+            <p>Quantity: {{productQuantity}}</p>
+            <p>${{productCost}} &nbsp &nbsp {{productAmount}} {{productUnits}}</p>
+          </div>
         </li>
     </script>
 
