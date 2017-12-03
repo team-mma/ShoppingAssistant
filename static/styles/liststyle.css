@@ -22,6 +22,17 @@
     margin: 0 !important;
 }
 
+.littlemargin {
+  margin: 0vw 0vw 2vw 0vw;
+}
+
+#frm1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 5vw;
+  padding: 7vw 0vw;
+  width: 100vw;
+}
+
 .scroll{
   overflow:scroll;
 }
@@ -160,6 +171,11 @@ li {
     height: 30vw;
 }
 
+.confirmation {
+  overflow: hidden;
+  height: 13vw;
+}
+
 .absolute {
   position: absolute;
   left: 80px;
@@ -204,7 +220,11 @@ li {
 }
 
 .headershading {
-    box-shadow: 0 0 7px #333;
+    box-shadow: 0 0 7px #555;
+}
+
+.headershading2 {
+    box-shadow: 0 7px 7px -7px #555;;
 }
 
 .centeralign {

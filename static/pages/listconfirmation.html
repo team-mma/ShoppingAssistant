@@ -43,18 +43,18 @@
 				<div id="confSummary">
 					<!--templated total order cost goes here-->
 				</div>
-				<li class="docked-bottom filled">
-					<a onclick="logout()" href="../index.html" class="button">Logout</a>
-					<a id="back_button" href="main.html" class="button" style="float: right;">Edit List</a>
-				</li>
 			</ul>
+      <div class="docked-bottom buttonrow buttonrow2">
+        <a onclick="logout()" href="../index.html" class="button">Logout</a>
+        <a id="back_button" href="main.html" class="button" style="float: right;">Edit List</a>
+      </div>
 		</div>
 	</div>
 </div>
 
 <script id="conf-item-template" type="text/x-handlebars-template">
-	<li id={{id}}>
-		<p><span style="font-weight:bold">{{productQuantity}}</span>&nbsp {{productTitle}}</p>
+	<li class="confirmation" id={{id}}>
+		<p class="leftpar"><span style="font-weight:bold">{{productQuantity}}</span>&nbsp {{productTitle}}</p>
 		<p class="rightpar">${{productCost}}</p>
 	</li>
 </script>

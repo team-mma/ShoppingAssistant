@@ -18,36 +18,42 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/liststyle.css">
+  <link rel="stylesheet" type="text/css" href="styles/dockingelements.css">
 	<title>Login Page</title>
 </head>
 
 <body>
 
-<h1 class="headershading">Login</h1>
+<h1 class="h1main">Login</h1>
+<h6 class="headershading2">Welcome to <span style="font-style:italic">ShoppingAssistant</span> !</h6>
 
-<p>To login as Larry, type "Larry" for the name and "12345" for the password.</p>
-<p>To login as Lucy, type "Lucy" for the name and "6789" for the password.</p>
-<form id="frm1" class="form-horizontal">
+  <img style="width: 40vw; margin-top: 10vw;     display: block;
+    margin: 11.5vw auto;" src="../images/voice-search-icon.png" />
+
+
+<!--<p>To login as Larry, type "Larry" for the name and "12345" for the password.</p>
+<p>To login as Lucy, type "Lucy" for the name and "6789" for the password.</p>-->
+<form id="frm1" class="form-horizontal docked-bottom headershading">
 	<div class="form-group">
-		<div class="col-sm-4 col-md-4">
-			<p>Name:</p>
+		<div class="col-sm-4 col-md-4 centeralign">
+			<p class="littlemargin">Name</p>
 		</div>
-		<div class="col-sm-6 col-md-6">
-			<input type="text" name="fname" value="Larry">
+		<div class="col-sm-6 col-md-6 centeralign">
+			<input type="text" name="fname" value="Larry" >
 		</div>
 	</div>
 	<div class="form-group">
-		<div class="col-sm-4 col-md-4">
-			<p>Password:</p>
+		<div class="col-sm-4 col-md-4 centeralign">
+			<p class="littlemargin">Password</p>
 		</div>
-		<div class="col-sm-6 col-md-6">
+		<div class="col-sm-6 col-md-6 centeralign">
 			<input type="text" name="lname" value="12345">
 		</div>
 	</div>
 	<br />
 	<div class="form-group">
-		<div class="col-sm-6">
-			<i onclick="login()" class="button">Submit</i>
+		<div class="col-sm-6 centeralign">
+			<i onclick="login()" class="button centeralign" style="width: 62.5vw">Login</i>
 		</div>
 	</div>
 </form>
