@@ -19,8 +19,10 @@ $(document).ready(function () {
 let source = $("#list-item-template").html();
 let template = Handlebars.compile(source);
 
-let parentDiv = $("#templatedLists");
+let parentDiv = $("#historyProducts");
 let heading = $("#heading");
+
+let parentDiv2 = $("#popularProducts");
 
 word = "";
 
@@ -40,7 +42,7 @@ function startDictation() {
         recognition.onresult = function (e) {
             word = e.results[0][0].transcript;
             document.getElementById('transcript').value = word;
-            document.getElementById('transcript2').value = word;
+            document.getElementById('transcript').value = word;
             recognition.stop();
             searchWord();
         };
@@ -85,14 +87,17 @@ function displayShoppingList() {
     document.getElementById('transcript2').placeholder = word;
     console.log('displayShoppingList word', word);
     parentDiv.html("");
+    parentDiv2.html("");
     console.log('parent div c1:', parentDiv.length);
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
+    let storeList = JSON.parse(localStorage.getItem('storeProducts'));
+    let historyList = JSON.parse(localStorage.getItem('shoppingHistoryProducts'));
 
     // This is a local var to count the number of matching products
     count = 0;
 
-    for (let i = 0; i < storeProducts.length; i++) {
-        let product = storeProducts[i];
+    for (let i = 0; i < historyList.length; i++) {
+        let product = historyList[i];
         if (product.productTitle.toLowerCase().includes(word.toLowerCase())) {
             console.log(product.productTitle);
             // Display the product only if it is not already added in the currentProductList
@@ -103,8 +108,29 @@ function displayShoppingList() {
             }
         }
     }
-    if (count === 0)
+    if (count === 0){
         parentDiv.text('No Items Found!');
+    }
+
+    count2 = 0;
+
+    for (let i = 0; i < storeProducts.length; i++) {
+        let product = storeProducts[i];
+        if (product.productTitle.toLowerCase().includes(word.toLowerCase())) {
+            console.log(product.productTitle);
+            // Display the product only if it is not already added in the currentProductList
+            if (!contains(i, tempList) && !contains(i, historyList)) {
+                let curHtml = template(product);
+                parentDiv2.append(curHtml);
+                count2++;
+            }
+        }
+    }
+    if (count2 === 0){
+        parentDiv2.text('No Items Found!');
+    }
+
+
 }
 
 // Search the given word in the store database and display the results

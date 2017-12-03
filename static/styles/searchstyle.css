@@ -65,3 +65,14 @@ h4 {
   text-align:left;
   max-width: 90vw;
 }
+
+.subtitle {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 5vw;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #888;
+  color: #888;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}

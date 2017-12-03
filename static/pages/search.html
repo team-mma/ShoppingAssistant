@@ -25,11 +25,7 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-12 nopadding">
       <h1 class="headershading">Search for Products</h1>
-      <!--<ul class="docked-bottom filled">
-      <li>
-          <a id="back_button" href="main.html" class="rightpar button">Back to List</a>
-      </li>
-    </ul>-->
+
       <div class="col-sm-12 col-md-6 nopadding docked-bottom">
         <div class="buttonrow buttonrow2">
           <a onclick="logout()" href="../index2.html" class="button leftalign">Logout</a>
@@ -87,11 +83,14 @@
         <h6 id="heading">Product List</h2>
         </br>
         </br>
-        <h4>FROM YOUR SHOPPING HISTORY</h4>
-				<div id="templatedLists" class="nomargin">
+        <h4 class="subtitle">FROM YOUR PURCHASE HISTORY</h4>
+				<div id="historyProducts" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
-        <h4>POPULAR</h4>
+        <h4 class="subtitle">POPULAR</h4>
+        <div id="popularProducts" class="nomargin">
+          <!--templated list items will be put into this div-->
+        </div>
 			</ul>
       <br>
       <br>
@@ -103,10 +102,10 @@
 <script id="list-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
 		<img src="{{productPic}}" />
-    		<img onclick="addItem({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: right" />
 		<h3>{{productTitle}}</h3>
-
-		<p>${{productCost}} &nbsp &nbsp {{productAmount}} {{productUnits}}</p>
+		<img onclick="addItem({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: right" />
+		<p> ${{productCost}} &nbsp &nbsp
+   		  {{productAmount}} {{productUnits}}</p>
 	</li>
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
