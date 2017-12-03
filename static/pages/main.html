@@ -24,7 +24,7 @@
 <body>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-12 col-md-6 nopadding">
+		<div class="col-sm-12 col-md-6 nopadding docked-top">
 			<h1>
 				<script type="text/javascript">//inserting user name
                 document.write(localStorage.getItem('user'))
@@ -32,20 +32,28 @@
 			</h1>
       <h6>Products from your purchase history</h6>
 		</div>
+    <div class="col-sm-12 col-md-6 nopadding">
+      <h1>
+        <script type="text/javascript">//inserting user name
+                document.write(localStorage.getItem('user'))
+        </script>'s Shopping List
+      </h1>
+      <h6>Products from your purchase history</h6>
+    </div>
 	</div>
 	<div class="row">
 		<div class="col-sm-12 col-md-6 nopadding">
 			<ul class="productlist">
 				<li >
-					<a onclick="deleteItemCompletely()" href="listconfirmation.html" class="button green">Done! Approve List</a>
+					<a onclick="deleteItemCompletely()" href="listconfirmation.html" class="button green">DONE! APPROVE LIST</a>
 				</li>
 				<!--<strong>(Swipe items to the left to reduce quantity and to the right to add quantity)</strong>-->
 				<div id="templatedLists" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
 				<li class="docked-bottom filled">
-					<a onclick="deleteItemCompletely() logout()" href="../index.html" class="button">Logout</a>
-					<a onclick="deleteItemCompletely()" href="search.html" class="button green">Add product</a>
+					<a onclick="deleteItemCompletely() logout()" href="../index.html" class="button">LOGOUT</a>
+					<a onclick="deleteItemCompletely()" href="search.html" class="button green">ADD PRODUCT</a>
 				</li>
 			</ul>
       <br>

@@ -23,15 +23,15 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-6 nopadding">
-                <h1>
-                    <script type="text/javascript">
-                        //inserting user name
-                        document.write(localStorage.getItem('user'))
-                    </script>
-                    's Shopping History
-                </h1>
-            </div>
+          <div class="col-sm-12 col-md-6 nopadding">
+            <h1>
+              <script type="text/javascript">//inserting user name
+                      document.write(localStorage.getItem('user'))
+              </script>'s Shopping List
+            </h1>
+            <h6>Products from your purchase history</h6>
+          </div>
+
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 nopadding">
@@ -45,11 +45,22 @@
                     </div>
                     <li class="docked-bottom filled">
                         <a onclick="deleteItemCompletely();logout()" href="../index2.html" class="button">Logout</a>
-                        <a onclick="deleteItemCompletely()" href="search.html" class="button green">Add product</a>
+                        <a onclick="deleteItemCompletely()" href="search.html" class="button green">Add Product</a>
                     </li>
                 </ul>
                 <br>
                 <br>
+            </div>
+            <div class="col-sm-12 col-md-6 nopadding docked-top">
+              <h1>
+                <script type="text/javascript">//inserting user name
+                        document.write(localStorage.getItem('user'))
+                </script>'s Shopping List
+              </h1>
+              <h6>Products from your purchase history</h6>
+              <div class="buttonrow buttonrow1 centerpar">
+                <a href="listconfirmation.html" class="button">Done! Approve List</a>
+              </div>
             </div>
         </div>
     </div>
