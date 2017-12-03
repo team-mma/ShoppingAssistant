@@ -26,6 +26,7 @@ word = "";
 
 function startDictation() {
     document.getElementById('transcript').value = "Listening...";
+    document.getElementById('transcript2').value = "Listening...";
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
         let recognition = new webkitSpeechRecognition();
@@ -39,6 +40,7 @@ function startDictation() {
         recognition.onresult = function (e) {
             word = e.results[0][0].transcript;
             document.getElementById('transcript').value = word;
+            document.getElementById('transcript2').value = word;
             recognition.stop();
             searchWord();
         };
@@ -51,7 +53,7 @@ function startDictation() {
 }
 
 function startDictation2() {
-    document.getElementById('transcript').value = "Listening...";
+    document.getElementById('transcript2').placeholder = "Listening...";
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
         let recognition = new webkitSpeechRecognition();
@@ -66,7 +68,7 @@ function startDictation2() {
             word = e.results[0][0].transcript2;
             document.getElementById('transcript2').value = word;
             recognition.stop();
-            searchWord();
+            searchWord2();
         };
 
         recognition.onerror = function (e) {
@@ -80,6 +82,7 @@ function displayShoppingList() {
     $("#search1").addClass("hide");
     $("#search2").removeClass("hide");
     $("#searchResults").removeClass("hide");
+    document.getElementById('transcript2').placeholder = word;
     console.log('displayShoppingList word', word);
     parentDiv.html("");
     console.log('parent div c1:', parentDiv.length);
