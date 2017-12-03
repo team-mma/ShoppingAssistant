@@ -36,7 +36,7 @@ shoppingHistoryProductsLucy = [
       'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 6.99, 'id': 1
   },
   {
-      'productTitle': 'Hollandia Milk', 'productPic': '../images/butter.svg', 'productQuantity': 2,
+      'productTitle': 'Hollandia Milk', 'productPic': '../images/milk.svg', 'productQuantity': 2,
       'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':5.00, 'productCost': 3.60, 'id': 2
   },
   {

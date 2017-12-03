@@ -84,7 +84,7 @@ h3 {
 
 .swipe {
     background-size: 100% 200%;
-    background: #CCCCCC
+    /*background: #CCCCCC*/
     linear-gradient(to right,
             gray,
             #919191);

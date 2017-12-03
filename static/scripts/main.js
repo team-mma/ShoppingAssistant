@@ -4,10 +4,9 @@ let template = Handlebars.compile(source);
 
 let undosource = $("#undo-item-template").html();
 let undotemplate = Handlebars.compile(undosource);
-let undoBool = 0;
-let stopFunction;
 
 let parentDiv = $("#templatedLists");
+let itemToDelete = -1; //ID of item to be deleted if undo is not pressed
 
 $(document).ready(function () {
     if (localStorage.getItem('user') === 'null') {
@@ -33,14 +32,14 @@ function displayShoppingList() {
 //Increases item count in current products
 function increaseItemCount(id) {
     console.log('add button clicked id:', id);
-    
+
     // Google Analytics Part
     if ("ga" in window) {
         tracker = ga.getAll()[0];
         if (tracker)
             tracker.send('event', 'button', 'click');
     }
-    
+
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     increaseQuantity(id, tempList);
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
@@ -71,10 +70,10 @@ function removeItem(id) {
         if (tracker)
             tracker.send('event', 'button', 'click');
     }
-    
+
     let tempList = JSON.parse(localStorage.getItem('currentProducts'));
     decreaseQuantityOrDelete(id, tempList);
-    if (undoBool === 1) {
+    /*if (undoBool === 1) {
         stopFunction = setTimeout(function () {
             localStorage.setItem('currentProducts', JSON.stringify(tempList));
             undoBool = 0;
@@ -83,15 +82,30 @@ function removeItem(id) {
         return;
     }
     localStorage.setItem('currentProducts', JSON.stringify(tempList));
+    displayShoppingList();*/
+}
+
+function deleteItemCompletely() {
+  if (itemToDelete < 0) {
+    return;
+  }
+  else{
+    let tempList = JSON.parse(localStorage.getItem('currentProducts'));
+    tempList.splice(itemToDelete,1);
+    localStorage.setItem('currentProducts', JSON.stringify(tempList));
     displayShoppingList();
+  }
 }
 
 function undo() {
-    clearTimeout(stopFunction);
+    itemToDelete= -1;
     displayShoppingList();
 }
 
 function decreaseQuantityOrDelete(id, tempList) {
+  if (itemToDelete > 0) {
+    deleteItemCompletely();
+  }
     for (let i = 0; i < tempList.length; i++) {
         let prod = tempList[i];
         if (prod.id === id) {
@@ -103,19 +117,21 @@ function decreaseQuantityOrDelete(id, tempList) {
                     tempList[i].unitCost * (tempList[i].productQuantity);
                 tempList[i].productAmount =
                     tempList[i].unitAmount * (tempList[i].productQuantity);
+                localStorage.setItem('currentProducts', JSON.stringify(tempList));
+                displayShoppingList();
                 return;
             }
             else {
-                undoBool = 1;
                 showUndo(i);
-                console.log("product deleted");
-                tempList.splice(i, 1);
+                itemToDelete= i;
+                //tempList.splice(i, 1);
             }
         }
     }
 }
 
 function showUndo(i) {
+  console.log("show undo method activated");
     parentDiv.html("");
     let currentProductsList = JSON.parse(localStorage.getItem('currentProducts'));
     for (let j = 0; j < currentProductsList.length; j++) {
@@ -125,6 +141,7 @@ function showUndo(i) {
             parentDiv.append(curHtml);
         }
         else {
+          console.log("should show undo template");
             let curData = currentProductsList[j];
             let curHtml = undotemplate(curData);
             parentDiv.append(curHtml);

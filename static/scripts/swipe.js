@@ -76,14 +76,14 @@ function touchEnd(event, id) {
 
 function touchCancel(event) {
     console.log('touch cancel');
-    
+
     // Google Analytics Part
     if ("ga" in window) {
         tracker = ga.getAll()[0];
         if (tracker)
             tracker.send('event', 'touch', 'cancel');
     }
-    
+
     // reset the variables back to default values
     fingerCount = 0;
     startX = 0;
@@ -130,10 +130,12 @@ function processingRoutine(id) {
     if ('left' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES
         removeItem(id);
+        //deleteItemCompletely();
         $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
     } else if ('right' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES
         increaseItemCount(id);
+        deleteItemCompletely();
         $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + 100-this.index*50 + 'px,0,0)');
     }
 }
