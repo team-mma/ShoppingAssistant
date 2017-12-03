@@ -50,7 +50,36 @@ function startDictation() {
     }
 }
 
+function startDictation2() {
+    document.getElementById('transcript').value = "Listening...";
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+        let recognition = new webkitSpeechRecognition();
+
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.lang = "en-US";
+        recognition.start();
+
+        recognition.onresult = function (e) {
+            word = e.results[0][0].transcript2;
+            document.getElementById('transcript2').value = word;
+            recognition.stop();
+            searchWord();
+        };
+
+        recognition.onerror = function (e) {
+            recognition.stop();
+        }
+
+    }
+}
+
 function displayShoppingList() {
+    $("#search1").addClass("hide");
+    $("#search2").removeClass("hide");
+    $("#searchResults").removeClass("hide");
     console.log('displayShoppingList word', word);
     parentDiv.html("");
     console.log('parent div c1:', parentDiv.length);
@@ -77,12 +106,26 @@ function displayShoppingList() {
 
 // Search the given word in the store database and display the results
 function searchWord() {
+    var x = document.getElementById("labnol");
+    word = x.elements[0].value;
     console.log('word searched: ', word);
-    word = word;
+    displayShoppingList();
+}
+
+function searchWord2() {
+    console.log("searchWord2 reached");
+    var x = document.getElementById("labnol2");
+    word = x.elements[0].value;
+    console.log('word searched: ', word);
     displayShoppingList();
 }
 
 $('#labnol').submit(function () {
+    searchWord();
+    return false;
+});
+
+$('#labnol2').submit(function () {
     searchWord();
     return false;
 });
