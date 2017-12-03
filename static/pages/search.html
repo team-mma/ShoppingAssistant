@@ -13,28 +13,33 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../styles/searchstyle.css">
 	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
   <link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<title>Product Search</title>
+  <title>Product Search</title>
 </head>
 
 <body>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 nopadding">
-			<h1 class="docked-top">Search for Products</h1>
-      <h1>Search for Products</h1>
-      <ul class="docked-bottom filled">
+      <h1 class="headershading">Search for Products</h1>
+      <!--<ul class="docked-bottom filled">
       <li>
           <a id="back_button" href="main.html" class="rightpar button">Back to List</a>
       </li>
-      </ul>
-
+    </ul>-->
+      <div class="col-sm-12 col-md-6 nopadding docked-bottom">
+        <div class="buttonrow buttonrow2">
+          <a onclick="logout()" href="../index2.html" class="button leftalign">Logout</a>
+          <a id="back_button" href="main.html" class="rightpar button">Back to List</a>
+        </div>
+      </div>
+    </div>
       <!--Div with initial search interface, with big mic button and explanations-->
       <div id="search1">
-			<h4>Tap MIC button and say a product name to search</h4>
+			<h4>Tap MIC button and say product name to search...</h4>
 			<div class="voice-search">
 				<img onclick="startDictation()" src="../images/voice-search-icon.png" />
 			</div>
@@ -45,41 +50,48 @@
 					<input type="text" name="q" id="transcript" placeholder="OR type product name here" />
 				</div>-->
         <div class="input-group">
-          <input type="text" id="transcript" placeholder="OR type product name here" class="form-control"/>
-          <span class="input-group-addon">
-            <i class="fa fa-search" onclick="searchWord()"></i>
+          <input type="text" id="transcript" placeholder="... OR type product name here" class="form-control"/>
+          <span class="input-group-addon button">
+            <i class="fa fa-search button" onclick="searchWord()"></i>
           </span>
         </div>
 			</form>
       </div>
 
       <!--Div which appears after search, with smaller mic button & search bar-->
-      <div id="search2" class="hide docked-top">
-      <ul>
-      <li>
-        <img onclick="startDictation()" src="../images/voice-search-icon.png" />
-        <form class="rightpar" id="labnol2" onsubmit="searchWord2()">
+      <div id="search2" class="hide col-sm-12 col-md-6 nopadding docked-top">
+        <div class="docked-top">
+              <h1 class="headershading">Search for Products</h1>
+              <div class="buttonrow buttonrow1">
+        <img class="voice-search2" onclick="startDictation()" src="../images/voice-search-icon.png" />
+        <form class="rightpar smaller" id="labnol2" onsubmit="searchWord2()">
           <!--<div class="speech">
             <input type="text" name="q" id="transcript" placeholder="product name" />
           </div>-->
           <div class="input-group">
             <input type="text" id="transcript2" placeholder="product name" class="form-control"/>
-            <span class="input-group-addon">
-              <i class="fa fa-search" onclick="searchWord2()"></i>
+            <span class="input-group-addon button">
+              <i class="fa fa-search button" onclick="searchWord2()"></i>
             </span>
           </div>
         </form>
-      </li>
-      </ul>
+        </div>
+        </div>
+
+        </div>
       </div>
 
 			<!--<a href="main.html" style="float: right"><h4>Back to list</h4></a>-->
 			<!--<h2 id="heading">Product List</h2>-->
-			<ul id="searchResults" class="productlist hide">
-        <h2 id="heading">Product List</h2>
+			<ul id="searchResults" class="productlist nopadding hide">
+        <h6 id="heading">Product List</h2>
+        </br>
+        </br>
+        <h4>FROM YOUR SHOPPING HISTORY</h4>
 				<div id="templatedLists" class="nomargin">
 					<!--templated list items will be put into this div-->
 				</div>
+        <h4>POPULAR</h4>
 			</ul>
       <br>
       <br>
@@ -91,11 +103,10 @@
 <script id="list-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
 		<img src="{{productPic}}" />
+    		<img onclick="addItem({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: right" />
 		<h3>{{productTitle}}</h3>
-		<img onclick="addItem({{id}})" src="../images/plus.svg" style="width: 35px; height: 35px; float: right" />
-		<p>Quantity: {{productQuantity}}&nbsp &nbsp
-		   {{productAmount}} {{productUnits}} each&nbsp &nbsp
-		   {{productCost}} each</p>
+
+		<p>${{productCost}} &nbsp &nbsp {{productAmount}} {{productUnits}}</p>
 	</li>
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

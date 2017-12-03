@@ -48,8 +48,12 @@ h1 {
     text-align: center;
     color: var(--font-color-1);
     background-color: var(--green-bg-color);
-    padding: 4vw 0vw 2vw 0vw;
+    padding: 4vw 0vw 4vw 0vw;
     margin: 0px;
+}
+
+.h1main {
+   padding: 4vw 0vw 2vw 0vw;
 }
 
 h2 {
@@ -176,6 +180,8 @@ li {
     margin: 0px;
     border-radius: 4px;
     display: inline-block;
+    font-style:normal;
+    border:none;
 
 }
 
@@ -187,13 +193,18 @@ li {
 }
 
 .buttonrow1 {
-    box-shadow: 0 7px 7px -7px #333;
+    box-shadow: 0 7px 7px -7px #555;
     border-top-style: solid;
     border-color: var(--green-darker);
 }
 
 .buttonrow2 {
-   box-shadow: 0 -7px 7px -7px #333;
+   box-shadow: 0 0 7px #555;
+   padding: 3vw 5vw 3vw 5vw;
+}
+
+.headershading {
+    box-shadow: 0 0 7px #333;
 }
 
 .centeralign {
@@ -215,9 +226,18 @@ li {
     float: left;
 }
 
+
 .button:hover {
-    background-color: #DDDDDD;
-    cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  /*font: bold 20px Arial;*/
+  background-color: var(--green-darker);
+  color: var(--font-color-1);
+  font-size: 5.5vw;
+  padding: 2vw;
+  margin: 0px;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .green {

@@ -1,3 +1,16 @@
+:root {
+  --main-bg-color: #ffffff;
+  --green-bg-color: #008B5C;
+  --green-button-color: #00C685;
+  --red-color: #FF5833;
+  --green-color: #45FFA1;
+  --green-darker: #004E34;
+  --shading: #eeeeee;
+  --font-color-1: #ffffff;
+  --font-color-2: #000000;
+  --image-size: 50px;
+}
+
 .speech {
     border: 1px solid #DDD;
     padding: 5px;
@@ -18,9 +31,21 @@
 }
 
 .voice-search img {
-    width: 100px;
-    height: 100px;
-    text-align: center
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    margin: 5vw;
+}
+
+.voice-search2{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+.smaller{
+  max-width: 75vw;
+  margin-top: 4px;
 }
 
 .nopadding {
@@ -29,5 +54,14 @@
 }
 
 h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7vw;
     padding: 0px 5px;
+}
+
+#search1 {
+  padding: 9vw 0 0 0;
+  margin: 0 auto;
+  text-align:left;
+  max-width: 90vw;
 }
