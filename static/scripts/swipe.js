@@ -129,8 +129,8 @@ function processingRoutine(id) {
     let swipedElement = document.getElementById(triggerElementID);
     if ('left' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES
-        removeItem(id);
         deleteItemCompletely();
+        removeItem(id);
         $('#' + id).addClass('swipe');//.css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
     } else if ('right' === swipeDirection) {
         // REPLACE WITH YOUR ROUTINES
