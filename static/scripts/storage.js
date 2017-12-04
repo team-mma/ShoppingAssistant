@@ -113,4 +113,28 @@ let storeProducts = [
         'productTitle': 'Kerrygold Irish Butter', 'productPic': '../images/butter.svg', 'productQuantity': 1,
         'unitAmount': 8, 'productAmount': 8, 'productUnits': 'oz', 'unitCost':4.99, 'productCost': 4.99, 'id': 14
     },
+    {
+        'productTitle': 'Cheddar Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 5, 'productAmount': 8, 'productUnits': 'oz', 'unitCost':3.49, 'productCost': 2.99, 'id': 15
+    },
+    {
+        'productTitle': 'Parmesan Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 6, 'productAmount': 6, 'productUnits': 'oz', 'unitCost':6.99, 'productCost': 4.49, 'id': 16
+    },
+    {
+        'productTitle': 'Tillamook Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 10, 'productAmount': 10, 'productUnits': 'oz', 'unitCost':2.49, 'productCost': 3.99, 'id': 17
+    },
+    {
+        'productTitle': 'Irish Cheese Assortment', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 12, 'productAmount': 4, 'productUnits': 'oz', 'unitCost':2.99, 'productCost': 2.99, 'id': 18
+    },
+    {
+        'productTitle': 'Kraft Grated Parmesan Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 3, 'productAmount': 8, 'productUnits': 'oz', 'unitCost':2.99, 'productCost': 2.49, 'id': 19
+    },
+    {
+        'productTitle': 'Extra-Sharp New York Cheddar Cheese', 'productPic': '../images/cheese.svg', 'productQuantity': 1,
+        'unitAmount': 4, 'productAmount': 8, 'productUnits': 'oz', 'unitCost':3.99, 'productCost': 4.25, 'id': 20
+    }
 ];
