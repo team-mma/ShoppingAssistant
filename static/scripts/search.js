@@ -183,3 +183,9 @@ function contains(id, tempList) {
     }
     return false;
 }
+
+//hide footer to avoid buggy looking interface during mobile search1
+function hideFooter(){
+  $("#footer").addClass("hide");
+  console.log("hiding footer");
+}

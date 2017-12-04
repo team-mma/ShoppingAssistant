@@ -26,7 +26,7 @@
 		<div class="col-sm-12 col-md-12 nopadding">
       <h1 class="headershading">Search for Products</h1>
 
-      <div class="col-sm-12 col-md-6 nopadding docked-bottom">
+      <div id="footer" class="col-sm-12 col-md-6 nopadding docked-bottom">
         <div class="buttonrow buttonrow2">
           <a onclick="logout()" href="../index2.html" class="button leftalign">Logout</a>
           <a id="back_button" href="main.html" class="rightpar button">Back to List</a>
@@ -46,7 +46,7 @@
 					<input type="text" name="q" id="transcript" placeholder="OR type product name here" />
 				</div>-->
         <div class="input-group">
-          <input type="text" id="transcript" placeholder="... OR type product name here" class="form-control"/>
+          <input onclick="hideFooter()" type="text" id="transcript" placeholder="... OR type product name here" class="form-control"/>
           <span class="input-group-addon button">
             <i class="fa fa-search button" onclick="searchWord()"></i>
           </span>
@@ -103,7 +103,7 @@
 	<li id={{id}}>
 		<img src="{{productPic}}" />
 		<h3>{{productTitle}}</h3>
-		<img onclick="addItem({{id}})" src="../images/plus.png" style="width: 35px; height: 35px; float: right" />
+		<img onclick="addItem({{id}})" src="../images/plus.png" style="width: 11vw; height: 11vw; float: right" />
 		<p> ${{productCost}} &nbsp &nbsp
    		  {{productAmount}} {{productUnits}}</p>
 	</li>
