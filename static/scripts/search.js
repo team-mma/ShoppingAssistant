@@ -54,6 +54,7 @@ function startDictation() {
     }
 }
 
+/*
 function startDictation2() {
     document.getElementById('transcript2').placeholder = "Listening...";
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
@@ -79,12 +80,13 @@ function startDictation2() {
 
     }
 }
+*/
 
 function displayShoppingList() {
     $("#search1").addClass("hide");
     $("#search2").removeClass("hide");
     $("#searchResults").removeClass("hide");
-    document.getElementById('transcript2').placeholder = word;
+    document.getElementById('transcript2').value = word;
     console.log('displayShoppingList word', word);
     parentDiv.html("");
     parentDiv2.html("");
