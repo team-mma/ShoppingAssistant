@@ -1,14 +1,14 @@
 :root {
-  --main-bg-color: #ffffff;
-  --green-bg-color: #008B5C;
-  --green-button-color: #00C685;
-  --red-color: #FF5833;
-  --green-color: #45FFA1;
-  --green-darker: #004E34;
-  --shading: #eeeeee;
-  --font-color-1: #ffffff;
-  --font-color-2: #000000;
-  --image-size: 50px;
+    --main-bg-color: #ffffff;
+    --green-bg-color: #008B5C;
+    --green-button-color: #00C685;
+    --red-color: #FF5833;
+    --green-color: #45FFA1;
+    --green-darker: #004E34;
+    --shading: #eeeeee;
+    --font-color-1: #ffffff;
+    --font-color-2: #000000;
+    --image-size: 50px;
 }
 
 .speech {
@@ -37,15 +37,15 @@
     margin: 5vw;
 }
 
-.voice-search2{
+.voice-search2 {
     width: 50px;
     height: 50px;
     margin: 0;
 }
 
-.smaller{
-  max-width: 75vw;
-  margin-top: 4px;
+.smaller {
+    max-width: 75vw;
+    margin-top: 4px;
 }
 
 .nopadding {
@@ -60,19 +60,23 @@ h4 {
 }
 
 #search1 {
-  padding: 9vw 0 0 0;
-  margin: 0 auto;
-  text-align:left;
-  max-width: 90vw;
+    padding: 9vw 0 0 0;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 90vw;
 }
 
 .subtitle {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 5vw;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: #888;
-  color: #888;
-  margin-top: 10px;
-  margin-bottom: 3px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 5vw;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #888;
+    color: #888;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.footer {
+    position: relative
 }
