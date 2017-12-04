@@ -5,7 +5,7 @@
 
 shoppingHistoryProductsLarry = [
   {
-      'productTitle': 'Milk', 'productPic': '../images/milk.svg', 'productQuantity': 2,
+      'productTitle': 'Hollandia Milk', 'productPic': '../images/milk.svg', 'productQuantity': 2,
       'unitAmount': 2, 'productAmount': 2, 'productUnits': 'qts', 'unitCost':5.00, 'productCost': 5.00, 'id': 0
   },
   {
