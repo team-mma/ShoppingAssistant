@@ -6,17 +6,17 @@ $(document).ready(function () {
   }
     var showAlternate = localStorage.getItem('showAlternate');
     console.log('showAlternate',showAlternate);
-    
+
     if(showAlternate == 'true') {
         $('#back_button').attr('href','main2.html');
     } else {
         $('#back_button').attr('href','main.html');
     }
-    
+
     setInterval(function () {
         remainingTime -= 1;
         const mins = parseInt(remainingTime / 60);
         const sec = remainingTime % 60;
-        document.getElementById('timer').innerHTML = 'Your cart will be ready in ' + mins + 'm ' + sec + 's';
+        document.getElementById('timer').innerHTML = mins + 'm ' + sec + 's';
     }, 1000);
 });

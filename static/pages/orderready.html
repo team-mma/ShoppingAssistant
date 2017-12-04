@@ -19,16 +19,22 @@
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
+  <link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
 	<title>Notification Page</title>
 </head>
+
 <body class="nopadding">
-<div class="container-fluid">
-	<div class="row">
+<div class="container nopadding" style:"overflow: hidden;">
+	<div class="row nopadding">
 		<div class="col-sm-12 col-md-12 nopadding">
-			<br/>
-			<a id="back_button" href="main.html" style="font-size: large"><i class="icon-home icon-2x icon-border" aria-hidden="true"></i>&nbsp; Home</a><br /><br />
-			<h3>Your order has been picked up and is ready for billing at</h3>
-			<h1 style="text-align: center;">Counter # 4</h1>
+			<h1 class="headershading">Order Ready!</h1>
+			<p class="bigP">Your order has been picked up and is ready for billing at:</p>
+			<h2 style="width: 100vw; margin: 8vw auto 0 auto; font-size: 10vw; text-align: center; display:block">Counter # 4</h2><br />
+
+      <div class="docked-bottom buttonrow buttonrow2">
+        <a onclick="logout()" href="../index2.html" class="button">Logout</a>
+        <a id="back_button" href="main2.html" class="button" style="float: right;">Back to List</a>
+      </div>
 		</div>
 	</div>
 </div>

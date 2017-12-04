@@ -198,7 +198,6 @@ li {
     display: inline-block;
     font-style:normal;
     border:none;
-
 }
 
 .buttonrow {
@@ -246,6 +245,13 @@ li {
     float: left;
 }
 
+.bigP {
+   width: 70vw;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 500;
+   font-size: 5vw;
+   margin: 8vw auto;
+}
 
 .button:hover {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

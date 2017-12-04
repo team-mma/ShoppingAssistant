@@ -19,19 +19,26 @@
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
+  <link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
 	<title>Time Remaining</title>
 </head>
+
 <body class="nopadding">
 <div class="container nopadding">
 	<div class="row nopadding">
 		<div class="col-sm-12 col-md-12 nopadding">
-			<br />
-			<a id="back_button" href="main.html" style="font-size: large"><i class="icon-home icon-2x icon-border" aria-hidden="true"></i>&nbsp; Home</a><br /><br />
-			<h1>We are picking up your products for you!</h1><br />
-			<h2 id="timer">Your cart will be ready in 14 min</h2><br />
-			<a href="orderready.html" style="margin: 23%">---> 14 minutes passed <---</a>
-			<br />
-			<br />
+			<!--<a href="main.html" style="font-size: large"><i class="icon-home icon-2x icon-border" aria-hidden="true"></i>&nbsp; Home</a><br /><br />-->
+			<h1 class="headershading">Waiting for Order</h1>
+      <p class = "bigP">Your cart will be ready in:</p>
+			<h2 id="timer" style="width: 100vw; margin: 8vw auto 0 auto; font-size: 15vw; text-align: center; display:block"> 14m 00s</h2><br />
+      <p class = "bigP">We are picking up your products for you!</p>
+      <p class = "bigP">Feel free to shop on your own while we are getting your cart ready.</p>
+      <a class="button centeralign" href="orderready.html" style="width: 40vw; margin: 8vw auto; display:block">Next</a>
+
+      <div class="docked-bottom buttonrow buttonrow2">
+        <a onclick="logout()" href="../index2.html" class="button">Logout</a>
+        <a id="back_button" href="main2.html" class="button" style="float: right;">Back to List</a>
+      </div>
 		</div>
 	</div>
 </div>
@@ -46,4 +53,5 @@
         crossorigin="anonymous"></script>
 <script src="../scripts/timeuntilpickup.js"></script>
 </body>
+
 </html>
