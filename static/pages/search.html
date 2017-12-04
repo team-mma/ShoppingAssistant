@@ -14,7 +14,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../styles/searchstyle.css">
+    <link rel="stylesheet" type="text/css" href="../styles/searchstyle.css">
 	<link rel="stylesheet" type="text/css" href="../styles/liststyle.css">
   <link rel="stylesheet" type="text/css" href="../styles/dockingelements.css">
   <title>Product Search</title>
@@ -80,7 +80,7 @@
 			<!--<a href="main.html" style="float: right"><h4>Back to list</h4></a>-->
 			<!--<h2 id="heading">Product List</h2>-->
 			<ul id="searchResults" class="productlist nopadding hide">
-        <h6 id="heading">Product List</h2>
+        <h6 id="heading">Product List</h6>
         </br>
         </br>
         <h4 class="subtitle">FROM YOUR PURCHASE HISTORY</h4>
@@ -101,7 +101,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
 <script id="list-item-template" type="text/x-handlebars-template">
 	<li id={{id}}>
-		<img src="{{productPic}}" />
+		<img class="picture" src="{{productPic}}" />
 		<h3>{{productTitle}}</h3>
 		<img onclick="addItem({{id}})" src="../images/plus.png" style="width: 11vw; height: 11vw; float: right" />
 		<p> ${{productCost}} &nbsp &nbsp
